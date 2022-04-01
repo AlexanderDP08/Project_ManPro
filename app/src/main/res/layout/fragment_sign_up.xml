@@ -41,6 +41,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:text="Create Account"
+        android:fontFamily="@font/montserratsemibold"
         android:textSize="20sp"
         android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="@+id/rectangle_6"
@@ -52,6 +53,7 @@
         android:layout_height="45dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_edittext"
+        android:fontFamily="@font/montserratsemibold"
         android:hint="Name"
         android:paddingLeft="20sp"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_6"
@@ -64,6 +66,7 @@
         android:layout_height="45dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_edittext"
+        android:fontFamily="@font/montserratsemibold"
         android:hint="Email"
         android:paddingLeft="20sp"
         app:layout_constraintStart_toStartOf="@+id/editNameSignup"
@@ -77,6 +80,7 @@
         android:background="@drawable/rounded_edittext"
         android:hint="Username"
         android:paddingLeft="20sp"
+        android:fontFamily="@font/montserratsemibold"
         app:layout_constraintStart_toStartOf="@+id/editEmailSignup"
         app:layout_constraintTop_toBottomOf="@+id/editEmailSignup" />
 
@@ -90,16 +94,18 @@
         android:inputType="textPassword"
         android:hint="Password"
         android:paddingLeft="20sp"
+        android:fontFamily="@font/montserratsemibold"
         app:layout_constraintStart_toStartOf="@+id/editUsernameSignup"
         app:layout_constraintTop_toBottomOf="@+id/editUsernameSignup" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRegister"
         android:layout_width="240dp"
         android:layout_height="45dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/rounded_btnedittext"
         android:text="Register"
+        android:fontFamily="@font/montserratsemibold"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 

@@ -3,10 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/drawable/rectangel_7.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/drawable/sign_up.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/layout/activity_main.xml" value="0.24615384615384617" />
-        <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/layout/fragment_sign_up.xml" value="0.2323076923076923" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/MyMoney_background.xml" value="0.23489583333333333" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/logo_loading.xml" value="0.403125" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/logo_mymoney.xml" value="0.403125" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_logo_loading.xml" value="0.33" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/logo_loading.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/mipmap-anydpi-v26/MyMoney.xml" value="0.23489583333333333" />
       </map>
     </option>
   </component>

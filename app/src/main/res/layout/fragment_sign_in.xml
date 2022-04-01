@@ -97,6 +97,20 @@
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view" />
 
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnsubmit"
+        android:layout_width="231dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="300dp"
+        android:text="SUBMIT"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/rounded_btnedittext"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        android:fontFamily="@font/montserratsemibold"
+        android:textSize="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

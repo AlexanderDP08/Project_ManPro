@@ -77,10 +77,19 @@
         app:layout_constraintTop_toTopOf="@+id/view"
         android:inputType="textPassword"
         android:textSize="20dp"
-        android:drawableRight="@drawable/show_password"
         android:layout_marginRight="10dp">
 
     </EditText>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="@+id/password"
+        app:layout_constraintTop_toTopOf="@+id/password"
+        app:srcCompat="@drawable/show_password"
+        android:layout_marginRight="16dp"/>
 
     <TextView
         android:id="@+id/forgot_pass"

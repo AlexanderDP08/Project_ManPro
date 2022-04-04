@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project_ManPro">
         <activity
-            android:name=".Logo_Loading"
+            android:name=".add_baru"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

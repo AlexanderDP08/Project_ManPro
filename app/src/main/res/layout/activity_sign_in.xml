@@ -76,8 +76,7 @@
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view"
         android:inputType="textPassword"
-        android:textSize="20dp"
-        android:layout_marginRight="10dp">
+        android:textSize="20dp">
 
     </EditText>
 

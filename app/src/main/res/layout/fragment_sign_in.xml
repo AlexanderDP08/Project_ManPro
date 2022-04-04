@@ -78,7 +78,7 @@
         android:inputType="textPassword"
         android:textSize="20dp"
         android:drawableRight="@drawable/show_password"
-        android:layout_paddingRight="10dp">
+        android:layout_marginRight="10dp">
 
     </EditText>
 

@@ -44,19 +44,85 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="80dp"
-            android:text="Add new transaction"
-            android:textSize="20sp"
-            android:textColor="@color/black"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/montserratsemibolditalic"
-            android:lineHeight="24sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:gravity="top"
-            />
+            android:lineHeight="24sp"
+            android:text="Add new transaction"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/arrow_left_" />
 
+        <EditText
+            android:id="@+id/frame_19"
+            android:layout_width="211dp"
+            android:layout_height="49dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="44dp"
+            android:background="@drawable/edit_rect_gray"
+            android:clipToOutline="true"
+            android:hint="Description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_new_tra" />
 
+        <EditText
+            android:id="@+id/frame_20"
+            android:layout_width="211dp"
+            android:layout_height="49dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/edit_rect_gray"
+            android:clipToOutline="true"
+            android:hint="Amount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frame_19" />
 
+        <EditText
+            android:id="@+id/frame_21"
+            android:layout_width="211dp"
+            android:layout_height="49dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/edit_rect_gray"
+            android:clipToOutline="true"
+            android:hint="Category"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frame_19" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/rectangle_1"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="76dp"
+            android:background="@drawable/cancel"
+            android:elevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frame_21" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/rectangle_2"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="76dp"
+            android:background="@drawable/confirm"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.157"
+            app:layout_constraintStart_toEndOf="@+id/rectangle_1"
+            app:layout_constraintTop_toBottomOf="@+id/frame_21" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

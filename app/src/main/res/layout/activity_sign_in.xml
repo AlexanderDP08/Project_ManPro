@@ -76,7 +76,11 @@
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view"
         android:inputType="textPassword"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        android:drawableRight="@drawable/show_password"
+        android:layout_marginRight="10dp">
+
+    </EditText>
 
     <TextView
         android:id="@+id/forgot_pass"
@@ -92,6 +96,19 @@
         android:fontFamily="@font/montserratmedium"
         android:textColor="@color/white"
         android:textAppearance="@style/forgot_pass"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <CheckBox
+        android:id="@+id/checkbox_meat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:text="Remember me?"
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/montserratmedium"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/view"

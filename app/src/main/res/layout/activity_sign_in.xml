@@ -8,8 +8,8 @@
     android:clipToOutline="true"
     android:background="@drawable/sign_up">
 
-    <View
-        android:id="@+id/view_signin"
+    <LinearLayout
+        android:id="@+id/llSignIn"
         android:layout_width="327dp"
         android:layout_height="420dp"
         android:layout_alignParentLeft="true"
@@ -18,10 +18,93 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etSignInEmail"
+            android:layout_width="231dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/edit_textbox"
+            android:hint="Email"
+            android:fontFamily="@font/montserratsemibold"
+            android:textColorHint="@color/et_hint"
+            android:paddingLeft="10dp"
+            android:textSize="20dp"/>
+
+        <EditText
+            android:id="@+id/etSignInPassword"
+            android:layout_width="231dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edit_textbox"
+            android:fontFamily="@font/montserratsemibold"
+            android:hint="Password"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/et_hint"
+            android:inputType="textPassword"
+            android:textSize="20dp">
+
+        </EditText>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:id="@+id/ibSignInShowPassword"
+            app:srcCompat="@drawable/show_password"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="-35dp"
+            android:layout_gravity="right"/>
+
+        <TextView
+            android:id="@+id/tvSignInForgotPass"
+            android:layout_width="129dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:textSize="13dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp"
+            android:text="Forgot password?"
+            android:fontFamily="@font/montserratmedium"
+            android:textColor="@color/white" />
+
+        <CheckBox
+            android:id="@+id/checkboxRememberMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckboxClicked"
+            android:text="Remember me?"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/montserratmedium" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSignInSubmit"
+            android:layout_width="231dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:text="SUBMIT"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/rounded_btnedittext"
+            android:fontFamily="@font/montserratsemibold"
+            android:textSize="16dp"/>
+
+    </LinearLayout>
 
     <View
-        android:id="@+id/view_signin_ellipse_1"
+        android:id="@+id/viewSignInEllipse"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_alignParentLeft="true"
@@ -33,110 +116,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/iv_signin_ProfileBg"
+        android:id="@+id/ivSignInProfileBg"
         android:layout_width="190dp"
         android:layout_height="160dp"
         android:background="@drawable/profile"
-        app:layout_constraintBottom_toBottomOf="@+id/view_signin_ellipse_1"
-        app:layout_constraintEnd_toEndOf="@+id/view_signin_ellipse_1"
-        app:layout_constraintStart_toStartOf="@+id/view_signin_ellipse_1"
-        app:layout_constraintTop_toTopOf="@+id/view_signin_ellipse_1" />
-
-    <EditText
-        android:id="@+id/et_signin_email"
-        android:layout_width="231dp"
-        android:layout_height="48dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginBottom="120dp"
-        android:background="@drawable/edit_textbox"
-        android:hint="Email"
-        android:fontFamily="@font/montserratsemibold"
-        android:textColorHint="@color/et_hint"
-        android:paddingLeft="10dp"
-        app:layout_constraintBottom_toBottomOf="@id/view_signin"
-        app:layout_constraintEnd_toEndOf="@id/view_signin"
-        app:layout_constraintStart_toStartOf="@id/view_signin"
-        app:layout_constraintTop_toTopOf="@id/view_signin"
-        android:textSize="20dp"/>
-
-    <EditText
-        android:id="@+id/et_signin_password"
-        android:layout_width="231dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/edit_textbox"
-        android:fontFamily="@font/montserratsemibold"
-        android:hint="Password"
-        android:paddingLeft="10dp"
-        android:textColorHint="@color/et_hint"
-        app:layout_constraintBottom_toBottomOf="@id/view_signin"
-        app:layout_constraintEnd_toEndOf="@id/view_signin"
-        app:layout_constraintStart_toStartOf="@id/view_signin"
-        app:layout_constraintTop_toTopOf="@id/view_signin"
-        android:inputType="textPassword"
-        android:textSize="20dp">
-
-    </EditText>
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        android:id="@+id/ib_signin_showpassword"
-        app:layout_constraintBottom_toBottomOf="@+id/et_signin_password"
-        app:layout_constraintEnd_toEndOf="@+id/et_signin_password"
-        app:layout_constraintTop_toTopOf="@+id/et_signin_password"
-        app:srcCompat="@drawable/show_password"
-        android:layout_marginRight="16dp"/>
-
-    <TextView
-        android:id="@+id/tv_signin_forgotpass"
-        android:layout_width="129dp"
-        android:layout_height="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:textSize="13dp"
-        android:gravity="top"
-        android:layout_marginTop="80dp"
-        android:layout_marginRight="90dp"
-        android:text="Forgot password?"
-        android:fontFamily="@font/montserratmedium"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@id/view_signin"
-        app:layout_constraintEnd_toEndOf="@id/view_signin"
-        app:layout_constraintStart_toStartOf="@id/view_signin"
-        app:layout_constraintTop_toTopOf="@id/view_signin" />
-
-    <CheckBox
-        android:id="@+id/checkbox_meat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onCheckboxClicked"
-        android:text="Remember me?"
-        android:layout_marginTop="150dp"
-        android:fontFamily="@font/montserratmedium"
-        app:layout_constraintBottom_toBottomOf="@id/view_signin"
-        app:layout_constraintEnd_toEndOf="@id/view_signin"
-        app:layout_constraintStart_toStartOf="@id/view_signin"
-        app:layout_constraintTop_toTopOf="@id/view_signin" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnsubmit"
-        android:layout_width="231dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="300dp"
-        android:text="SUBMIT"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/rounded_btnedittext"
-        app:layout_constraintBottom_toBottomOf="@id/view_signin"
-        app:layout_constraintEnd_toEndOf="@id/view_signin"
-        app:layout_constraintStart_toStartOf="@id/view_signin"
-        app:layout_constraintTop_toTopOf="@id/view_signin"
-        android:fontFamily="@font/montserratsemibold"
-        android:textSize="16dp"/>
+        app:layout_constraintBottom_toBottomOf="@+id/viewSignInEllipse"
+        app:layout_constraintEnd_toEndOf="@+id/viewSignInEllipse"
+        app:layout_constraintStart_toStartOf="@+id/viewSignInEllipse"
+        app:layout_constraintTop_toTopOf="@+id/viewSignInEllipse" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -144,12 +131,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view_signin"
+        app:layout_constraintTop_toBottomOf="@id/llSignIn"
         android:orientation="horizontal"
-        android:layout_marginBottom="30dp">
+        android:layout_marginBottom="30dp"
+        android:id="@+id/llSignInCreate">
 
         <TextView
-            android:id="@+id/tv_signin_ifnew"
+            android:id="@+id/tvSignInIfNew"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -162,7 +150,7 @@
             android:layout_weight="0"/>
 
         <TextView
-            android:id="@+id/tv_signin_createnew"
+            android:id="@+id/tvSignInCreateNew"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"

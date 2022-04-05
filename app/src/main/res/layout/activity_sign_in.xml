@@ -9,7 +9,7 @@
     android:background="@drawable/sign_up">
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/view_signin"
         android:layout_width="327dp"
         android:layout_height="420dp"
         android:layout_alignParentLeft="true"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/ellipse_1"
+        android:id="@+id/view_signin_ellipse_1"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_alignParentLeft="true"
@@ -33,17 +33,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/ivProfileBg"
+        android:id="@+id/iv_signin_ProfileBg"
         android:layout_width="190dp"
         android:layout_height="160dp"
         android:background="@drawable/profile"
-        app:layout_constraintBottom_toBottomOf="@+id/ellipse_1"
-        app:layout_constraintEnd_toEndOf="@+id/ellipse_1"
-        app:layout_constraintStart_toStartOf="@+id/ellipse_1"
-        app:layout_constraintTop_toTopOf="@+id/ellipse_1" />
+        app:layout_constraintBottom_toBottomOf="@+id/view_signin_ellipse_1"
+        app:layout_constraintEnd_toEndOf="@+id/view_signin_ellipse_1"
+        app:layout_constraintStart_toStartOf="@+id/view_signin_ellipse_1"
+        app:layout_constraintTop_toTopOf="@+id/view_signin_ellipse_1" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/et_signin_email"
         android:layout_width="231dp"
         android:layout_height="48dp"
         android:layout_alignParentLeft="true"
@@ -54,14 +54,14 @@
         android:fontFamily="@font/montserratsemibold"
         android:textColorHint="@color/et_hint"
         android:paddingLeft="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@id/view_signin"
+        app:layout_constraintEnd_toEndOf="@id/view_signin"
+        app:layout_constraintStart_toStartOf="@id/view_signin"
+        app:layout_constraintTop_toTopOf="@id/view_signin"
         android:textSize="20dp"/>
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/et_signin_password"
         android:layout_width="231dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -71,10 +71,10 @@
         android:hint="Password"
         android:paddingLeft="10dp"
         android:textColorHint="@color/et_hint"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@id/view_signin"
+        app:layout_constraintEnd_toEndOf="@id/view_signin"
+        app:layout_constraintStart_toStartOf="@id/view_signin"
+        app:layout_constraintTop_toTopOf="@id/view_signin"
         android:inputType="textPassword"
         android:textSize="20dp">
 
@@ -84,14 +84,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/password"
-        app:layout_constraintEnd_toEndOf="@+id/password"
-        app:layout_constraintTop_toTopOf="@+id/password"
+        android:id="@+id/ib_signin_showpassword"
+        app:layout_constraintBottom_toBottomOf="@+id/et_signin_password"
+        app:layout_constraintEnd_toEndOf="@+id/et_signin_password"
+        app:layout_constraintTop_toTopOf="@+id/et_signin_password"
         app:srcCompat="@drawable/show_password"
         android:layout_marginRight="16dp"/>
 
     <TextView
-        android:id="@+id/forgot_pass"
+        android:id="@+id/tv_signin_forgotpass"
         android:layout_width="129dp"
         android:layout_height="20dp"
         android:layout_alignParentLeft="true"
@@ -103,10 +104,10 @@
         android:text="Forgot password?"
         android:fontFamily="@font/montserratmedium"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        app:layout_constraintBottom_toBottomOf="@id/view_signin"
+        app:layout_constraintEnd_toEndOf="@id/view_signin"
+        app:layout_constraintStart_toStartOf="@id/view_signin"
+        app:layout_constraintTop_toTopOf="@id/view_signin" />
 
     <CheckBox
         android:id="@+id/checkbox_meat"
@@ -116,10 +117,10 @@
         android:text="Remember me?"
         android:layout_marginTop="150dp"
         android:fontFamily="@font/montserratmedium"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        app:layout_constraintBottom_toBottomOf="@id/view_signin"
+        app:layout_constraintEnd_toEndOf="@id/view_signin"
+        app:layout_constraintStart_toStartOf="@id/view_signin"
+        app:layout_constraintTop_toTopOf="@id/view_signin" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnsubmit"
@@ -130,25 +131,25 @@
         android:text="SUBMIT"
         android:layout_alignParentTop="true"
         android:background="@drawable/rounded_btnedittext"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@id/view_signin"
+        app:layout_constraintEnd_toEndOf="@id/view_signin"
+        app:layout_constraintStart_toStartOf="@id/view_signin"
+        app:layout_constraintTop_toTopOf="@id/view_signin"
         android:fontFamily="@font/montserratsemibold"
         android:textSize="16dp"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@id/view_signin"
         android:orientation="horizontal"
         android:layout_marginBottom="30dp">
 
         <TextView
-            android:id="@+id/ifnew"
+            android:id="@+id/tv_signin_ifnew"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -161,7 +162,7 @@
             android:layout_weight="0"/>
 
         <TextView
-            android:id="@+id/createnew"
+            android:id="@+id/tv_signin_createnew"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"

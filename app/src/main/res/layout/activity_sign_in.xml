@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp"
+    tools:context=".activity_sign_in"
     android:clipToOutline="true"
     android:background="@drawable/sign_up">
 
@@ -56,16 +56,6 @@
 
         </EditText>
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:id="@+id/ibSignInShowPassword"
-            app:srcCompat="@drawable/show_password"
-            android:layout_marginRight="60dp"
-            android:layout_marginTop="-35dp"
-            android:layout_gravity="right"/>
-
         <TextView
             android:id="@+id/tvSignInForgotPass"
             android:layout_width="129dp"
@@ -80,29 +70,19 @@
             android:fontFamily="@font/montserratmedium"
             android:textColor="@color/white" />
 
-        <CheckBox
-            android:id="@+id/checkboxRememberMe"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onCheckboxClicked"
-            android:text="Remember me?"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/montserratmedium" />
-
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSignInSubmit"
             android:layout_width="231dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"
-            android:text="SUBMIT"
             android:textColor="@color/black"
             android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="80dp"
             android:background="@drawable/rounded_btnedittext"
             android:fontFamily="@font/montserratsemibold"
-            android:textSize="16dp"/>
+            android:text="SUBMIT"
+            android:textSize="16dp" />
 
     </LinearLayout>
 

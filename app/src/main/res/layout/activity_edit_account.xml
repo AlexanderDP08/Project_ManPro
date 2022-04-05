@@ -74,7 +74,7 @@
                     android:layout_height="50dp"
                     android:backgroundTint="@color/black"
                     android:background="@drawable/profile_2"
-                    android:layout_graivty="left"/>
+                    android:layout_gravity="left"/>
 
                 <EditText
                     android:id="@+id/etEditAccountProfile"
@@ -111,7 +111,7 @@
                     android:id="@+id/ivEditAccountPassword"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_graivty="left"
+                    android:layout_gravity="left"
                     android:background="@drawable/key"
                     android:backgroundTint="@color/yellow"
                     />
@@ -155,7 +155,7 @@
                 android:id="@+id/ivEditAccountConfirm"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:layout_graivty="left"
+                android:layout_gravity="left"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/check"

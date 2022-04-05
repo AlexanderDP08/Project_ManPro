@@ -1,9 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity_edit_account">
+    android:id="@+id/account"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clipToOutline="true"
+    android:background="@drawable/main_back">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAccount"
+        android:layout_width="334dp"
+        android:layout_height="360dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/white_sheet"
+        android:clipToOutline="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="70dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ibEditAccountBack"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/arrow_left"
+            android:backgroundTint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/viewEditAccountProfile"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rectangel_6"
+            android:text="EDIT PROFILE"
+            android:fontFamily="@font/montserratsemibolditalic"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ibEditAccountBack" />
+
+        <LinearLayout
+            android:id="@+id/llEditAccount"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewEditAccountProfile"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:id="@+id/flEditAccountProfile"
+                android:layout_weight="0">
+
+                <ImageView
+                    android:id="@+id/ivEditAccountProfile"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/black"
+                    android:background="@drawable/profile_2"
+                    android:layout_graivty="left"/>
+
+                <EditText
+                    android:id="@+id/etEditAccountProfile"
+                    android:layout_width="210dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@null"
+                    android:hint="Input New Name"
+                    android:textColorHint="@color/et_hint"
+                    android:fontFamily="@font/montserratsemibold"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:layout_gravity="right"/>
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/border"
+                android:id="@+id/tvEditAccountBorder1"
+                android:layout_weight="1"/>
+
+
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:id="@+id/flEditAccountPassword"
+                android:layout_weight="4">
+
+                <ImageView
+                    android:id="@+id/ivEditAccountPassword"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_graivty="left"
+                    android:background="@drawable/key"
+                    android:backgroundTint="@color/yellow"
+                    />
+
+                <EditText
+                    android:id="@+id/etEditAccountPassword"
+                    android:layout_width="210dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@null"
+                    android:hint="Input New Password"
+                    android:textColorHint="@color/et_hint"
+                    android:fontFamily="@font/montserratsemibold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:layout_gravity="right"/>
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/border"
+                android:id="@+id/tvEditAccountBorder3"
+                android:layout_weight="5"/>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/flAccountEditProfile"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llEditAccount">
+
+            <ImageView
+                android:id="@+id/ivEditAccountConfirm"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_graivty="left"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/check"
+                android:backgroundTint="@color/green" />
+
+            <TextView
+                android:id="@+id/tvEditAccountConfirm"
+                android:layout_width="210dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="right"
+                android:background="@null"
+                android:fontFamily="@font/montserratmedium"
+                android:gravity="center"
+                android:text="Confirm"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

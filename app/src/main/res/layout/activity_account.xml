@@ -3,12 +3,248 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/add_baru"
+    android:id="@+id/account"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:clipToOutline="true"
     android:background="@drawable/main_back">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAccount"
+        android:layout_width="334dp"
+        android:layout_height="500dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/white_sheet"
+        android:clipToOutline="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="70dp">
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ibAccountBack"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/arrow_left"
+            android:backgroundTint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/viewAccountProfile"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rectangel_6"
+            android:text="PROFILE"
+            android:fontFamily="@font/montserratsemibolditalic"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ibAccountBack" />
+
+        <LinearLayout
+            android:id="@+id/ll_account"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewAccountProfile"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:id="@+id/flAccountProfile"
+                android:layout_weight="0">
+
+                <ImageView
+                    android:id="@+id/ivAccountProfile"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/black"
+                    android:background="@drawable/profile_2"
+                    android:layout_graivty="left"/>
+
+                <TextView
+                    android:id="@+id/tvAccountProfile"
+                    android:layout_width="210dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@null"
+                    android:text="Alexander Ding Fu"
+                    android:fontFamily="@font/montserratsemibold"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ib_account_back"
+                    android:layout_gravity="right"/>
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/border"
+                android:id="@+id/tvAccountBorder1"
+                android:layout_weight="1"/>
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:id="@+id/flAccountEmail"
+                android:layout_weight="2">
+
+                <ImageView
+                    android:id="@+id/ivAccountEmail"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_graivty="left"
+                    android:background="@drawable/email"
+                    android:backgroundTint="@color/black"
+                    android:layout_marginTop="5dp" />
+
+                <TextView
+                    android:id="@+id/tvAccountEmail"
+                    android:layout_width="210dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@null"
+                    android:text="alex.dingfu@gmail.com"
+                    android:fontFamily="@font/montserratsemibold"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ib_account_back"
+                    android:layout_gravity="right"/>
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/border"
+                android:id="@+id/tvAccountBorder2"
+                android:layout_weight="3"/>
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:id="@+id/flAccountPassword"
+                android:layout_weight="4">
+
+                <ImageView
+                    android:id="@+id/ivAccountPassword"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_graivty="left"
+                    android:background="@drawable/key"
+                    android:backgroundTint="@color/yellow"
+                    />
+
+                <TextView
+                    android:id="@+id/tvAccountPassword"
+                    android:layout_width="210dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@null"
+                    android:text="***********"
+                    android:fontFamily="@font/montserratsemibold"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ib_account_back"
+                    android:layout_gravity="right"/>
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/border"
+                android:id="@+id/tvAccountBorder3"
+                android:layout_weight="5"/>
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:id="@+id/flAccountEditProfile"
+                android:layout_weight="6"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:id="@+id/ivAccountEditProfile"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_graivty="left"
+                    android:background="@drawable/edit_profile"
+                    android:backgroundTint="@color/light_blue"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvAccountEditProfile"
+                    android:layout_width="210dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@null"
+                    android:text="Edit Profile"
+                    android:fontFamily="@font/montserratmedium"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ib_account_back"
+                    android:layout_gravity="right"/>
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/border"
+                android:id="@+id/tvAccountBorder4"
+                android:layout_weight="7"/>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btAccountLogout"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/cancel"
+            android:text="Logout"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/montserratsemibold"
+            android:textColor="@color/white"
+            android:drawableLeft="@drawable/logout"
+            android:drawablePadding="5dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_account" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

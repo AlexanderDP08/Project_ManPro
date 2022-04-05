@@ -6,4 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".activity_home_screen">
 
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:text="HOME SCREEN PENCET IKI"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </Button>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

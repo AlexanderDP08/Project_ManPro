@@ -74,7 +74,7 @@
                     android:layout_height="50dp"
                     android:backgroundTint="@color/black"
                     android:background="@drawable/profile_2"
-                    android:layout_graivty="left"/>
+                    android:layout_gravity="left"/>
 
                 <TextView
                     android:id="@+id/tvAccountProfile"
@@ -108,7 +108,7 @@
                     android:id="@+id/ivAccountEmail"
                     android:layout_width="50dp"
                     android:layout_height="40dp"
-                    android:layout_graivty="left"
+                    android:layout_gravity="left"
                     android:background="@drawable/email"
                     android:backgroundTint="@color/black"
                     android:layout_marginTop="5dp" />
@@ -145,7 +145,7 @@
                     android:id="@+id/ivAccountPassword"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_graivty="left"
+                    android:layout_gravity="left"
                     android:background="@drawable/key"
                     android:backgroundTint="@color/yellow"
                     />
@@ -183,7 +183,7 @@
                     android:id="@+id/ivAccountEditProfile"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
-                    android:layout_graivty="left"
+                    android:layout_gravity="left"
                     android:background="@drawable/edit_profile"
                     android:backgroundTint="@color/light_blue"
                     android:layout_marginTop="8dp"

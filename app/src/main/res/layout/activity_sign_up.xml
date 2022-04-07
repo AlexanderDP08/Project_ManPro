@@ -106,6 +106,15 @@
 
 
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSignUpRegister"
+        android:layout_width="240dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_btnedittext"
+        android:text="Register"
+        app:layout_constraintStart_toStartOf="@+id/etSignUpPassword"
+        app:layout_constraintTop_toBottomOf="@+id/etSignUpPassword" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

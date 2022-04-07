@@ -82,7 +82,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/frame_19" />
 
-        <EditText
+        <Spinner
             android:id="@+id/frame_21"
             android:layout_width="211dp"
             android:layout_height="49dp"
@@ -104,6 +104,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="36dp"
             android:layout_marginTop="76dp"
+            android:text="cancel"
             android:background="@drawable/cancel"
             android:elevation="4dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -117,6 +118,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="20dp"
             android:layout_marginTop="76dp"
+            android:text="Confirm"
             android:background="@drawable/confirm"
             android:elevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"

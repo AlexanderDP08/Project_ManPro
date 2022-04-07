@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "889482313615",
+    "project_id": "mymoneyapp-dadee",
+    "storage_bucket": "mymoneyapp-dadee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889482313615:android:d479df2e29f2c8793a95fa",
+        "android_client_info": {
+          "package_name": "com.example.project_manpro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889482313615-5jhmon5drq4seh7cdc3mp78a9hkao7l4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.project_manpro",
+            "certificate_hash": "e32ea5455525f0f4232f599d7f46324df906d484"
+          }
+        },
+        {
+          "client_id": "889482313615-q7nkn5qulu0kkt86dg5q7ks8g36p99uk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDILM9r8MH-sUt3Uy2ymVQh9iLUG0rX82k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889482313615-q7nkn5qulu0kkt86dg5q7ks8g36p99uk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

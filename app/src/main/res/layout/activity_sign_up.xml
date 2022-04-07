@@ -8,7 +8,7 @@
     android:clipToOutline="true"
     android:background="@drawable/sign_up">
 
-    <View
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/viewSignUp"
         android:layout_width="327dp"
         android:layout_height="420dp"
@@ -18,98 +18,94 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <View
-        android:id="@+id/viewSignUpRectangle"
-        android:layout_width="299dp"
-        android:layout_height="394dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/rectangel_6"
-        app:layout_constraintBottom_toBottomOf="@+id/viewSignUp"
-        app:layout_constraintEnd_toEndOf="@+id/viewSignUp"
-        app:layout_constraintStart_toStartOf="@+id/viewSignUp"
-        app:layout_constraintTop_toTopOf="@+id/viewSignUp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/viewSignUpRectangle"
+            android:layout_width="299dp"
+            android:layout_height="394dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/rectangel_6"
+            app:layout_constraintBottom_toBottomOf="@+id/viewSignUp"
+            app:layout_constraintEnd_toEndOf="@+id/viewSignUp"
+            app:layout_constraintStart_toStartOf="@+id/viewSignUp"
+            app:layout_constraintTop_toTopOf="@+id/viewSignUp">
 
-    <TextView
-        android:id="@+id/tvSignUpCreateAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="Create Account"
-        android:textSize="20sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintStart_toStartOf="@+id/viewSignUpRectangle"
-        app:layout_constraintTop_toTopOf="@+id/viewSignUpRectangle" />
+            <TextView
+                android:id="@+id/tvSignUpCreateAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="Create Account"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="@+id/viewSignUpRectangle"
+                app:layout_constraintTop_toTopOf="@+id/viewSignUpRectangle" />
 
-    <EditText
-        android:id="@+id/etSignUpName"
-        android:layout_width="240dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_edittext"
-        android:hint="Name"
-        android:paddingLeft="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/viewSignUpRectangle"
-        app:layout_constraintStart_toStartOf="@+id/viewSignUpRectangle"
-        app:layout_constraintTop_toBottomOf="@+id/tvSignUpCreateAccount" />
+            <EditText
+                android:id="@+id/etSignUpName"
+                android:layout_width="240dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_edittext"
+                android:hint="Name"
+                android:paddingLeft="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSignUpCreateAccount" />
 
-    <EditText
-        android:id="@+id/etSignUpEmail"
-        android:layout_width="240dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_edittext"
-        android:hint="Email"
-        android:paddingLeft="20sp"
-        app:layout_constraintStart_toStartOf="@+id/etSignUpName"
-        app:layout_constraintTop_toBottomOf="@+id/etSignUpName" />
+            <EditText
+                android:id="@+id/etSignUpEmail"
+                android:layout_width="240dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_edittext"
+                android:hint="Email"
+                android:paddingLeft="20sp"
+                app:layout_constraintStart_toStartOf="@+id/etSignUpName"
+                app:layout_constraintTop_toBottomOf="@+id/etSignUpName" />
 
-    <EditText
-        android:id="@+id/etSignUpUsername"
-        android:layout_width="240dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_edittext"
-        android:hint="Username"
-        android:paddingLeft="20sp"
-        app:layout_constraintStart_toStartOf="@+id/etSignUpEmail"
-        app:layout_constraintTop_toBottomOf="@+id/etSignUpEmail" />
+            <EditText
+                android:id="@+id/etSignUpPassword"
+                android:layout_width="240dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_edittext"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingLeft="20sp"
+                app:layout_constraintTop_toBottomOf="@+id/etSignUpEmail"
+                tools:layout_editor_absoluteX="30dp" />
 
-    <EditText
-        android:id="@+id/etSignUpPassword"
-        android:layout_width="240dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_edittext"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:hint="Password"
-        android:paddingLeft="20sp"
-        app:layout_constraintStart_toStartOf="@+id/etSignUpUsername"
-        app:layout_constraintTop_toBottomOf="@+id/etSignUpUsername" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btSignUpRegister"
+                android:layout_width="240dp"
+                android:layout_height="45dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/rounded_btnedittext"
+                android:text="Register"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/etSignUpPassword" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btSignUpRegister"
-        android:layout_width="240dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/rounded_btnedittext"
-        android:text="Register"
-        app:layout_constraintStart_toStartOf="@+id/etSignUpPassword"
-        app:layout_constraintTop_toBottomOf="@+id/etSignUpPassword" />
+            <ImageButton
+                android:id="@+id/btnPassSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:background="@null"
+                app:layout_constraintBottom_toBottomOf="@+id/etSignUpPassword"
+                app:layout_constraintEnd_toEndOf="@+id/etSignUpPassword"
+                app:layout_constraintTop_toTopOf="@+id/etSignUpPassword"
+                app:srcCompat="@drawable/show_password" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageButton
-        android:id="@+id/btnPassSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:background="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/etSignUpPassword"
-        app:layout_constraintEnd_toEndOf="@+id/etSignUpPassword"
-        app:layout_constraintTop_toTopOf="@+id/etSignUpPassword"
-        app:srcCompat="@drawable/show_password" />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

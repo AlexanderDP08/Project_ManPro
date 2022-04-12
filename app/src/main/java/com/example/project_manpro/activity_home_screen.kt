@@ -21,7 +21,7 @@ class activity_home_screen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_screen)
 
-        _tvEmail = findViewById(R.id.tvHomeScreenEmail)
+        /*_tvEmail = findViewById(R.id.tvHomeScreenEmail)
         _tvUID = findViewById(R.id.tvHomeScreenUID)
 
         _btnLogout = findViewById(R.id.btnHomeScreenLogout)
@@ -36,10 +36,10 @@ class activity_home_screen : AppCompatActivity() {
             startActivity(Intent(this, activity_sign_in::class.java))
             finish()
         }
-        checkUser()
+        checkUser()*/
     }
 
-    private fun checkUser() {
+    /*private fun checkUser() {
         val firebaseUser = firebaseAuth.currentUser
         if (firebaseUser != null) {
             _tvEmail.text = firebaseUser!!.email
@@ -48,5 +48,5 @@ class activity_home_screen : AppCompatActivity() {
         else {
             startActivity(Intent(this, activity_sign_in::class.java))
         }
-    }
+    }*/
 }

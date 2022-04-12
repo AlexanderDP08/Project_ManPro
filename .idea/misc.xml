@@ -3,37 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project/Project_ManPro/app/src/main/res/layout-v31/activity_logo_loading.xml" value="0.17831813576494426" />
+        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project/Project_ManPro/app/src/main/res/layout/activity_account.xml" value="0.3625" />
+        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project/Project_ManPro/app/src/main/res/layout/activity_add_baru.xml" value="0.2115036231884058" />
+        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project/Project_ManPro/app/src/main/res/layout/activity_control_spending.xml" value="0.2115036231884058" />
+        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project/Project_ManPro/app/src/main/res/layout/activity_edit_account.xml" value="0.2115036231884058" />
+        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project/Project_ManPro/app/src/main/res/layout/activity_forgot_password.xml" value="0.2115036231884058" />
+        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project/Project_ManPro/app/src/main/res/layout/activity_home_screen.xml" value="0.33" />
+        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project/Project_ManPro/app/src/main/res/layout/activity_logo_loading.xml" value="0.2115036231884058" />
+        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project/Project_ManPro/app/src/main/res/layout/activity_main.xml" value="0.2115036231884058" />
+        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project/Project_ManPro/app/src/main/res/layout/activity_monitor.xml" value="0.2115036231884058" />
+        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project/Project_ManPro/app/src/main/res/layout/activity_reset_password.xml" value="0.33" />
+        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project/Project_ManPro/app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
+        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project/Project_ManPro/app/src/main/res/layout/activity_sign_up.xml" value="0.5" />
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/drawable/rectangel_7.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/drawable/sign_up.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/layout/activity_home_screen.xml" value="0.24615384615384617" />
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/layout/activity_main.xml" value="0.24615384615384617" />
+        <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/layout/activity_sign_up.xml" value="0.5492957746478874" />
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/layout/fragment_sign_up.xml" value="0.2323076923076923" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.39692307692307693" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/arrow_left.xml" value="0.14907407407407408" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/cancel.xml" value="0.22592592592592592" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/confirm.xml" value="0.22592592592592592" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/edit_rect_gray.xml" value="0.22592592592592592" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/edit_textbox.xml" value="0.39692307692307693" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/ellipse_1.xml" value="0.39692307692307693" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/ic_launcher_background.xml" value="0.39692307692307693" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/icon_user_r.xml" value="0.14907407407407408" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/logo_loading.xml" value="0.39692307692307693" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/main_back.xml" value="0.39692307692307693" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/rectangel_6.xml" value="0.39692307692307693" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/rectangel_7.xml" value="0.39692307692307693" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/rounded_btnedittext.xml" value="0.39692307692307693" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/rounded_edittext.xml" value="0.39692307692307693" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/show_password.xml" value="0.225" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/sign_up.xml" value="0.39692307692307693" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/white_sheet.xml" value="0.17037037037037037" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_add_baru.xml" value="0.33" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_forgot_password.xml" value="0.22" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_logo_loading.xml" value="0.18819655521783182" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_main.xml" value="0.28940217391304346" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_reset_password.xml" value="0.25" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/confirm.xml" value="0.18819655521783182" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/fragment_sign_in.xml" value="0.1" />
-        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/fragment_sign_up.xml" value="0.33" />
       </map>
     </option>
   </component>

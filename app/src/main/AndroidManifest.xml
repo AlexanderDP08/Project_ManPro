@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.project_manpro">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,14 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".addData"
+            android:exported="false" />
+        <activity
             android:name=".activity_home_screen"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".activity_reset_password"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".activity_sign_up"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".activity_sign_in"
             android:exported="true">

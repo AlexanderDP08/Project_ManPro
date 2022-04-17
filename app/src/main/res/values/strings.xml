@@ -2,4 +2,23 @@
     <string name="app_name">Project_ManPro</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <String-array name="Category">
+        <item>Account receivable</item>
+        <item>Additional Income</item>
+        <item>Allowance</item>
+        <item>Bonus</item>
+        <item>Books</item>
+        <item>Business Profit</item>
+        <item>Cable TV</item>
+        <item>Cafe</item>
+        <item>Capital Gain</item>
+        <item>Cash withdrawal</item>
+        <item>Children</item>
+        <item>Cinema</item>
+        <item>Cost and taxes</item>
+        <item>Credit Cart</item>
+        <item>Doctor Fee</item>
+        <item>Domestic Helper</item>
+    </String-array>
 </resources>

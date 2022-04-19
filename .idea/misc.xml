@@ -12,8 +12,10 @@
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/cancel.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/confirm.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/edit_rect_gray.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/edit_text_control.xml" value="0.1935185185185185" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/edit_textbox.xml" value="0.39692307692307693" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/ellipse_1.xml" value="0.39692307692307693" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/framefinancebalance.xml" value="0.19814814814814816" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/ic_launcher_background.xml" value="0.39692307692307693" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/icon_user_r.xml" value="0.14907407407407408" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/logo_loading.xml" value="0.39692307692307693" />
@@ -25,39 +27,22 @@
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/show_password.xml" value="0.225" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/sign_up.xml" value="0.39692307692307693" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/drawable/white_sheet.xml" value="0.17037037037037037" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_account.xml" value="0.25" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_add_baru.xml" value="0.33" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_control_spending.xml" value="0.21510416666666668" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_forgot_password.xml" value="0.22" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_home_screen.xml" value="0.21510416666666668" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_logo_loading.xml" value="0.18819655521783182" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_main.xml" value="0.28940217391304346" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_monitor.xml" value="0.21510416666666668" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_reset_password.xml" value="0.25" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/confirm.xml" value="0.18819655521783182" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/fragment_control_spending_1.xml" value="0.22" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/fragment_finance_balance.xml" value="0.2078125" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/fragment_fr_groceries_f_b.xml" value="0.2078125" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/fragment_sign_in.xml" value="0.1" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/fragment_sign_up.xml" value="0.33" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/drawable/framefinancebalance.xml" value="0.22708333333333333" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/drawable/layout_add_data.xml" value="0.22708333333333333" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/drawable/logo_loading.xml" value="0.22708333333333333" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/drawable/logout.xml" value="0.22708333333333333" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/drawable/main_back.xml" value="0.22708333333333333" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/drawable/profile_2.xml" value="0.22708333333333333" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/drawable/rounded_btnedittext.xml" value="0.22708333333333333" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/drawable/rounded_edittext.xml" value="0.22708333333333333" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/drawable/white_sheet.xml" value="0.22708333333333333" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/layout/activity_account.xml" value="0.17028985507246377" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/layout/activity_add_data.xml" value="0.2109375" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/layout/activity_control_spending.xml" value="0.2109375" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/layout/activity_forgot_password.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/layout/activity_home_screen.xml" value="0.17028985507246377" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/layout/activity_main.xml" value="0.17028985507246377" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/layout/activity_monitor.xml" value="0.2109375" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/layout/activity_reset_password.xml" value="0.13541666666666666" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/layout/activity_sign_in.xml" value="0.17831813576494426" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/layout/fragment_finance_balance.xml" value="0.2109375" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/layout/fragment_fr_groceries_f_b.xml" value="0.2109375" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/layout/fragment_fr_health_f_b.xml" value="0.2109375" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/layout/fragment_fr_income_f_b.xml" value="0.2109375" />
-        <entry key="..\:/Users/ivan1/OneDrive/Documents/Sekolah - Kuliah/ukp sem 6/ManPro/Project_ManPro/app/src/main/res/layout/fragment_monitor.xml" value="0.2109375" />
       </map>
     </option>
   </component>

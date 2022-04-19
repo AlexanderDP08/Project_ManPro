@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/framefinancebalance"
+    tools:context=".controlspending_utama">
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="Control Spending"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="Current Limit"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="Current Limit"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toTopOf="@+id/textView9" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ellipse_4"
+        android:layout_width="150dp"
+        android:layout_height="149.07dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/frame_control_spending"
+        android:elevation="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserratmedium"
+            android:text="50%"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/ellipse_7"
+        android:layout_width="46dp"
+        android:layout_height="43dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/frame_control_spending"
+        android:elevation="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/ellipse_4"
+        app:layout_constraintTop_toBottomOf="@+id/ellipse_4" />
+
+    <ImageView
+        android:id="@+id/ellipse_6"
+        android:layout_width="33dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/frame_control_spending"
+        android:elevation="6dp"
+        app:layout_constraintEnd_toStartOf="@+id/ellipse_7"
+        app:layout_constraintTop_toBottomOf="@+id/ellipse_7" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ellipse_5"
+        android:layout_width="147.99dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/frame_your_spending"
+        android:elevation="6dp"
+        app:layout_constraintStart_toEndOf="@+id/ellipse_4"
+        app:layout_constraintTop_toBottomOf="@+id/textView10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserratmedium"
+            android:text="8%"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/ellipse_9"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/frame_your_spending"
+        android:elevation="6dp"
+        app:layout_constraintStart_toStartOf="@+id/ellipse_5"
+        app:layout_constraintTop_toBottomOf="@+id/ellipse_5" />
+
+    <ImageView
+        android:id="@+id/ellipse_10"
+        android:layout_width="20dp"
+        android:layout_height="21dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/frame_your_spending"
+        android:elevation="6dp"
+        app:layout_constraintStart_toEndOf="@+id/ellipse_9"
+        app:layout_constraintTop_toTopOf="@+id/ellipse_9" />
+
+    <ImageView
+        android:id="@+id/ellipse_8"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/frame_your_spending"
+        android:elevation="6dp"
+        app:layout_constraintStart_toEndOf="@+id/ellipse_9"
+        app:layout_constraintTop_toBottomOf="@+id/ellipse_9" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="229dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="Good monthly spending! Keep it up!"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ellipse_6" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/rectangle_1"
+        android:layout_width="260dp"
+        android:layout_height="57dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/frame_button_controlspending"
+        android:elevation="4dp"
+        android:fontFamily="@font/montserratmedium"
+        android:text="Edit your current limit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class activity_sign_up : AppCompatActivity() {
 
@@ -20,6 +21,7 @@ class activity_sign_up : AppCompatActivity() {
 
     private lateinit var progressDialog : ProgressDialog
     private lateinit var firebaseAuth : FirebaseAuth
+    private lateinit var db : FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +38,7 @@ class activity_sign_up : AppCompatActivity() {
         progressDialog.setCanceledOnTouchOutside(false)
 
         firebaseAuth = FirebaseAuth.getInstance()
+
 
         _btnRegister.setOnClickListener {
             validateData()
@@ -64,9 +67,15 @@ class activity_sign_up : AppCompatActivity() {
         progressDialog.show()
         firebaseAuth.createUserWithEmailAndPassword(_edEmail.text.toString().trim(), _edPassword.text.toString().trim())
             .addOnSuccessListener {
-                progressDialog.dismiss()
                 val firebaseUser = firebaseAuth.currentUser
                 val email = firebaseUser!!.email
+
+                //Add Username to Username Database with Firebase Firestore
+                var addData = uid(_edName.text.toString().trim())
+                db = FirebaseFirestore.getInstance()
+                db.collection("username").document(firebaseUser.uid).set(addData)
+
+                progressDialog.dismiss()
                 Toast.makeText(
                     this,
                     "Account created with email ${email}",

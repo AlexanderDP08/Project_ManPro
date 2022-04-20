@@ -3,7 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <String-array name="Category">
+    <string-array name="Category">
         <item>Account receivable</item>
         <item>Additional Income</item>
         <item>Allowance</item>
@@ -20,5 +20,5 @@
         <item>Credit Cart</item>
         <item>Doctor Fee</item>
         <item>Domestic Helper</item>
-    </String-array>
+    </string-array>
 </resources>

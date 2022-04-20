@@ -18,6 +18,9 @@
             android:name=".activity_home_screen"
             android:exported="true" />
         <activity
+            android:name=".activity_account"
+            android:exported="true" />
+        <activity
             android:name=".activity_reset_password"
             android:exported="true" />
         <activity

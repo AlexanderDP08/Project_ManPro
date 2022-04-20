@@ -5,22 +5,38 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 class activity_home_screen : AppCompatActivity() {
 
-    lateinit var _tvUID : TextView
-    lateinit var _tvEmail : TextView
-    lateinit var _btnLogout : Button
+    lateinit var _tvName : TextView
+    lateinit var _btnAccPage : ImageView
 
-    private  lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var db : FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_screen)
 
+        db = FirebaseFirestore.getInstance()
+        firebaseAuth = FirebaseAuth.getInstance()
+
+        _btnAccPage = findViewById(R.id.ivAccountPage)
+        _tvName = findViewById(R.id.tvNamaUser)
+
+        _btnAccPage.setOnClickListener {
+            startActivity(Intent(this, activity_account::class.java))
+        }
+
+        db.collection("username").document(firebaseAuth.uid.toString()).get()
+            .addOnSuccessListener { doc ->
+                _tvName.text = doc.data!!["username"].toString()
+            }
         /*_tvEmail = findViewById(R.id.tvHomeScreenEmail)
         _tvUID = findViewById(R.id.tvHomeScreenUID)
 

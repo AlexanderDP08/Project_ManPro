@@ -44,9 +44,9 @@
             android:layout_marginRight="24dp"
             android:background="@drawable/filter"
             android:backgroundTint="@color/black"
-            android:layoutGravity="right"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+<!--            android:layoutGravity="right"-->
 
         <TextView
             android:id="@+id/tvMonitorMonthly"
@@ -54,30 +54,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/montserratbold"
+            android:paddingLeft="5dp"
             android:text="Monthly Expenses"
             android:textColor="@color/black"
             android:textSize="26sp"
             android:textStyle="italic"
-            android:paddingLeft="5dp"
             app:layout_constraintStart_toStartOf="@+id/ibMonitorBack"
             app:layout_constraintTop_toBottomOf="@+id/ibMonitorBack" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvMonitorMonthly"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/white"
-            android:layout_marginHorizontal="10dp"
-            app:cardCornerRadius="3dp"
-            app:cardElevation="4dp"
-            app:cardUseCompatPadding="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvMonitorMonthly">
-
-        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

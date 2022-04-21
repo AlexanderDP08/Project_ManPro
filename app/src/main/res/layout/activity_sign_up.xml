@@ -87,7 +87,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/etSignUpEmail" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btSignUpRegister"
+                android:id="@+id/btnSignUpRegister"
                 android:layout_width="240dp"
                 android:layout_height="45dp"
                 android:layout_marginBottom="24dp"

@@ -82,13 +82,12 @@
                     android:layout_height="50dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
+                    android:layout_gravity="right"
                     android:background="@null"
-                    android:text="Alexander Ding Fu"
                     android:fontFamily="@font/montserratsemibold"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
                     android:gravity="center"
-                    android:layout_gravity="right"/>
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
             </FrameLayout>
 
             <TextView
@@ -119,13 +118,12 @@
                     android:layout_height="50dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
+                    android:layout_gravity="right"
                     android:background="@null"
-                    android:text="alex.dingfu@gmail.com"
                     android:fontFamily="@font/montserratsemibold"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
                     android:gravity="center"
-                    android:layout_gravity="right"/>
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
             </FrameLayout>
 
             <TextView

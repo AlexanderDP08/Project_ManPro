@@ -37,32 +37,14 @@ class activity_home_screen : AppCompatActivity() {
             .addOnSuccessListener { doc ->
                 _tvName.text = doc.data!!["username"].toString()
             }
-        /*_tvEmail = findViewById(R.id.tvHomeScreenEmail)
-        _tvUID = findViewById(R.id.tvHomeScreenUID)
+            .addOnFailureListener {
 
-        _btnLogout = findViewById(R.id.btnHomeScreenLogout)
+            }
 
-        firebaseAuth = FirebaseAuth.getInstance()
+        val mFragmentManager = supportFragmentManager
+        val mHomeScreen = financeBalance()
 
-        _tvEmail.text = firebaseAuth.currentUser!!.email
-        _tvUID.text = firebaseAuth.currentUser!!.uid
-
-        _btnLogout.setOnClickListener {
-            firebaseAuth.signOut()
-            startActivity(Intent(this, activity_sign_in::class.java))
-            finish()
-        }
-        checkUser()*/
+        mFragmentManager.findFragmentByTag(activity_home_screen::class.java.simpleName)
+        mFragmentManager.beginTransaction().add(R.id.fragmentContainer, mHomeScreen, activity_home_screen::class.java.simpleName).commit()
     }
-
-    /*private fun checkUser() {
-        val firebaseUser = firebaseAuth.currentUser
-        if (firebaseUser != null) {
-            _tvEmail.text = firebaseUser!!.email
-            _tvUID.text = firebaseUser!!.uid
-        }
-        else {
-            startActivity(Intent(this, activity_sign_in::class.java))
-        }
-    }*/
 }

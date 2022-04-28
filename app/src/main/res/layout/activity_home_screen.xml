@@ -45,6 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <ImageView
+        android:id="@+id/ivAccountPage"
         android:layout_width="61dp"
         android:layout_height="61dp"
         android:layout_marginTop="24dp"
@@ -87,44 +88,38 @@
         app:layout_constraintStart_toStartOf="@+id/tvJumlahUang"
         app:layout_constraintTop_toBottomOf="@+id/tvJumlahUang" />
 
-    <fragment
-        android:id="@+id/fragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="59dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/framefinancebalance"
-        android:elevation="25dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent">
 
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="40dp"
             android:layout_height="40dp"
+
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/iconrumah"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="50dp"
+            android:layout_width="45dp"
             android:layout_height="35dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="64dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/iconcardnonactive"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -133,7 +128,31 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnTambah"
+        android:layout_width="66dp"
+        android:layout_height="68dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/ellipse_red"
+        android:elevation="6dp"
+        android:drawableLeft="@drawable/ic_baseline_add_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout"/>
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainer"
+        android:name="com.example.project_manpro.financeBalance"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

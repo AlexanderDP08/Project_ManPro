@@ -101,7 +101,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-
+            android:id="@+id/btnHome"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
@@ -115,6 +115,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnControl"
             android:layout_width="45dp"
             android:layout_height="35dp"
             android:layout_marginTop="8dp"

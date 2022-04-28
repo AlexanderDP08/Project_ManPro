@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class activity_sign_in : AppCompatActivity() {
 
@@ -22,6 +23,7 @@ class activity_sign_in : AppCompatActivity() {
 
     private lateinit var progressDialog : ProgressDialog
     private lateinit var firebaseAuth : FirebaseAuth
+    private lateinit var firestore : FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +42,7 @@ class activity_sign_in : AppCompatActivity() {
         progressDialog.setCanceledOnTouchOutside(false)
 
         firebaseAuth = FirebaseAuth.getInstance()
+        firestore = FirebaseFirestore.getInstance()
         checkUser()
 
         _tvCreateNewAccount.setOnClickListener{

@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" >
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/ibMonitorBack"
+            android:id="@+id/btnMonitorBack"
             android:layout_width="46dp"
             android:layout_height="46dp"
             android:layout_alignParentLeft="true"
@@ -59,8 +59,8 @@
             android:textSize="26sp"
             android:textStyle="italic"
             android:paddingLeft="5dp"
-            app:layout_constraintStart_toStartOf="@+id/ibMonitorBack"
-            app:layout_constraintTop_toBottomOf="@+id/ibMonitorBack" />
+            app:layout_constraintStart_toStartOf="@+id/btnMonitorBack"
+            app:layout_constraintTop_toBottomOf="@+id/btnMonitorBack" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvMonitorMonthly"

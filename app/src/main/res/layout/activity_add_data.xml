@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" >
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/ibDataTambah"
+            android:id="@+id/btnBacktoHome"
             android:layout_width="46dp"
             android:layout_height="46dp"
             android:layout_alignParentLeft="true"
@@ -44,8 +44,8 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="italic"
-            app:layout_constraintStart_toStartOf="@+id/ibDataTambah"
-            app:layout_constraintTop_toBottomOf="@+id/ibDataTambah" />
+            app:layout_constraintStart_toStartOf="@+id/btnBacktoHome"
+            app:layout_constraintTop_toBottomOf="@+id/btnBacktoHome" />
 
         <TextView
             android:id="@+id/textView7"
@@ -80,8 +80,9 @@
                 android:layout_alignParentTop="true"
                 android:background="@drawable/frame_add_data"
                 android:elevation="4dp"
-                android:hint=" Transacttion"
-                android:textColorHint="@color/grey"
+                android:hint="Transaction"
+                android:textColor="@color/black"
+                android:textColorHint="@android:color/darker_gray"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -109,8 +110,9 @@
                 android:layout_alignParentTop="true"
                 android:background="@drawable/frame_add_data"
                 android:elevation="4dp"
-                android:hint=" Amount"
-                android:textColorHint="@color/grey"
+                android:hint="Amount"
+                android:textColor="@color/black"
+                android:textColorHint="@android:color/darker_gray"
                 android:textSize="24sp"
                 tools:layout_editor_absoluteX="37dp"
                 tools:layout_editor_absoluteY="296dp" />
@@ -129,11 +131,11 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView4">
 
             <Spinner
-                android:id="@+id/category_spinner"
+                android:id="@+id/categorySpinner"
                 android:layout_width="261dp"
                 android:layout_height="48dp"
-                app:layout_constraintStart_toStartOf="@+id/etAmount"
-                app:layout_constraintTop_toBottomOf="@+id/etAmount" />
+                android:entries="@array/category"
+                android:outlineSpotShadowColor="@color/black" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -148,15 +150,14 @@
             app:layout_constraintStart_toStartOf="@+id/cardView5"
             app:layout_constraintTop_toBottomOf="@+id/cardView5">
 
-
-            <EditText
-                android:id="@+id/editTextDate"
-                android:layout_width="261dp"
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="200dp"
                 android:layout_height="48dp"
-                android:ems="10"
-                android:hint=" Date"
-                android:inputType="date"
-                android:textColorHint="@color/black"
+                android:gravity="left|center_vertical"
+                android:hint="Date"
+                android:textColor="@color/black"
+                android:textColorHint="@android:color/darker_gray"
                 android:textSize="24sp" />
         </androidx.cardview.widget.CardView>
 
@@ -188,6 +189,16 @@
             android:elevation="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/btnDate"
+            android:layout_width="47dp"
+            android:layout_height="48dp"
+            android:background="@drawable/edit_profile"
+            android:backgroundTint="@color/light_blue"
+            app:layout_constraintBottom_toBottomOf="@+id/cardView6"
+            app:layout_constraintEnd_toEndOf="@+id/cardView5"
+            app:layout_constraintTop_toTopOf="@+id/cardView6" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,6 +23,7 @@ class activity_home_screen : AppCompatActivity() {
     lateinit var _btnControlOn : AppCompatButton
     lateinit var _btnHomeOff : AppCompatButton
     lateinit var _btnHomeOn : AppCompatButton
+    lateinit var _btnAddData : AppCompatButton
 
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var db : FirebaseFirestore
@@ -81,5 +82,13 @@ class activity_home_screen : AppCompatActivity() {
             mFragmentManager.findFragmentByTag(activity_home_screen::class.java.simpleName)
             mFragmentManager.beginTransaction().add(R.id.fragmentContainer, mHomeScreen, activity_home_screen::class.java.simpleName).commit()
         }
+
+
+        _btnAddData = findViewById(R.id.btnAddData)
+
+        _btnAddData.setOnClickListener {
+            startActivity(Intent(this, addData::class.java))
+        }
+
     }
 }

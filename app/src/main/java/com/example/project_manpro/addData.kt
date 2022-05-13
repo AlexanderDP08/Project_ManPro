@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.widget.AppCompatButton
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -17,14 +19,26 @@ class addData : AppCompatActivity() {
     lateinit var _btnCancel : Button
     lateinit var _btnConfirm : Button
 
+    lateinit var _etTransaction : EditText
+    lateinit var _etAmount : EditText
+
     //getDate
     var cal = Calendar.getInstance()
     lateinit var _btnDate: Button
     lateinit var _tvDate: TextView
 
+    lateinit var db : FirebaseFirestore
+    lateinit var authdb : FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_data)
+
+        db = FirebaseFirestore.getInstance()
+        authdb = FirebaseAuth.getInstance()
+
+        _etTransaction = findViewById(R.id.etTransaction)
+        _etAmount = findViewById(R.id.etAmount)
 
         _btnBack = findViewById(R.id.btnBacktoHome)
         _btnBack.setOnClickListener {
@@ -72,15 +86,36 @@ class addData : AppCompatActivity() {
         }
         _btnConfirm.setOnClickListener {
             //add data to database here
-
+            addtoDatabase(db, _etTransaction.text.toString(), _tvDate.text.toString(), _etAmount.text.toString(), getCategory(categorySpinner))
             startActivity(Intent(this, activity_home_screen::class.java))
             finish()
         }
+    }
+
+    private fun addtoDatabase(db: FirebaseFirestore, judul: String, tanggal: String, jumlah: String, kategory: String) {
+        val data = dataTransaction(judul, tanggal, jumlah, kategory)
+        db.collection(authdb.currentUser!!.uid)
+            .add(data)
+            .addOnSuccessListener {
+                Toast.makeText(this@addData, "Data added", Toast.LENGTH_LONG)
+                    .show()
+                finish()
+            }
+            .addOnFailureListener {
+                Toast.makeText(this@addData,"Data Gagal disimpan",Toast.LENGTH_SHORT)
+                    .show()
+                finish()
+            }
     }
 
     private fun updateDateInView() {
         val myFormat = "MMM d, yyyy" // mention the format you need
         val sdf = SimpleDateFormat(myFormat, Locale.US)
         _tvDate!!.text = sdf.format(cal.getTime())
+    }
+
+    fun getCategory(id: Spinner): String {
+        return id.selectedItem.toString()
+        //Toast.makeText(this, spiner.selectedItem.toString(), Toast.LENGTH_LONG).show()
     }
 }

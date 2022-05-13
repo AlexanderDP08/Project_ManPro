@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="@+id/ivCircle" />
 
     <TextView
-        android:id="@+id/tvTanggalIncome"
+        android:id="@+id/tvTanggal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

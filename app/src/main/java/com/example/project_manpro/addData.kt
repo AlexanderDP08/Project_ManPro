@@ -59,7 +59,7 @@ class addData : AppCompatActivity() {
         //Category Spinner
         categorySpinner = findViewById(R.id.categorySpinner)
         val AdapterSPCategory = ArrayAdapter.createFromResource(this,
-            R.array.category, android.R.layout.simple_spinner_item)
+            R.array.category, R.layout.spinner_item)
         AdapterSPCategory.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         categorySpinner.adapter = AdapterSPCategory
 

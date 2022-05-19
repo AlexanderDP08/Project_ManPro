@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +21,8 @@ class control_spending_1 : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    lateinit var _btnCancel:AppCompatButton
+    lateinit var _btnConfirm:AppCompatButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +30,31 @@ class control_spending_1 : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val fragmentMainControl = controlspending_utama()
+        val fragmentM = parentFragmentManager
+        _btnCancel=view.findViewById(R.id.cancel_control)
+        _btnConfirm=view.findViewById(R.id.confirm_control)
+
+        _btnCancel.setOnClickListener {
+            fragmentM.beginTransaction().apply {
+                replace(R.id.fragmentContainer, fragmentMainControl, controlspending_utama::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+
+        _btnConfirm.setOnClickListener {
+            fragmentM.beginTransaction().apply {
+                replace(R.id.fragmentContainer, fragmentMainControl, controlspending_utama::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+
     }
 
     override fun onCreateView(

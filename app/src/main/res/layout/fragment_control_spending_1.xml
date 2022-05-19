@@ -48,6 +48,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="Enter your spending reminder"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/frame_19"
+        app:layout_constraintTop_toBottomOf="@+id/frame_19" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="263dp"
+        android:layout_height="49dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_control"
+        android:clipToOutline="true"
+        android:hint="Enter your warning"
+        app:layout_constraintStart_toStartOf="@+id/frame_19"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/cancel_control"
         android:layout_width="120dp"
@@ -55,12 +80,12 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/cancel"
         android:elevation="4dp"
         android:text="cancel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frame_19" />
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/rectangle_2"
@@ -68,12 +93,12 @@
         android:layout_height="48dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="80dp"
         android:background="@drawable/confirm"
         android:elevation="4dp"
         android:text="Confirm"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frame_19" />
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

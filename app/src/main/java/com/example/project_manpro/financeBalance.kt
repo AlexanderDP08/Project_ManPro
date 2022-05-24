@@ -2,11 +2,15 @@ package com.example.project_manpro
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,6 +28,17 @@ class financeBalance : Fragment() {
     private var param2: String? = null
 
     lateinit var _tvShowall : TextView
+    lateinit var _btnIncome : CardView
+    lateinit var _btnExpenditure : CardView
+
+    lateinit var _tvIncome : TextView
+    lateinit var _tvExpend : TextView
+
+    lateinit var dbAuth : FirebaseAuth
+    lateinit var db : FirebaseFirestore
+
+    var income : Int = 0
+    var expend : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,11 +62,73 @@ class financeBalance : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        dbAuth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
+
+        _tvIncome = view.findViewById(R.id.tvIncome)
+        _tvExpend = view.findViewById(R.id.tvExpend)
+
+        db.collection(dbAuth.currentUser!!.uid).get()
+            .addOnSuccessListener {
+                for (document in it) {
+                    val cat = document.data.get("kategori").toString()
+                    if (cat == "Account Receivable" ||
+                        cat == "Additional Income" ||
+                        cat == "Bonus" ||
+                        cat == "Allowance" ||
+                        cat == "Capital Gain" ||
+                        cat == "Income" ||
+                        cat == "Refund" ||
+                        cat == "Salary" ||
+                        cat == "Savings" ||
+                        cat == "Business Profit"){
+                        income += document.data.get("jumlah").toString().toInt()
+                    }
+
+                    if (cat != "Account Receivable" &&
+                        cat != "Additional Income" &&
+                        cat != "Bonus" &&
+                        cat != "Allowance" &&
+                        cat != "Capital Gain" &&
+                        cat != "Income" &&
+                        cat != "Refund" &&
+                        cat != "Salary" &&
+                        cat != "Savings" &&
+                        cat != "Business Profit"){
+                        expend += document.data.get("jumlah").toString().toInt()
+                    }
+                }
+                _tvIncome.setText("%,d".format(income))
+                _tvExpend.setText("%,d".format(expend))
+            }
+            .addOnFailureListener {
+
+            }
+
+        //==============================
         _tvShowall = view.findViewById(R.id.tvShowall)
 
         _tvShowall.setOnClickListener {
             activity?.let {
                 val intent = Intent(it, activity_monitor::class.java)
+                it.startActivity(intent)
+            }
+        }
+
+        _btnIncome = view.findViewById(R.id.cvIncome)
+        _btnExpenditure = view.findViewById(R.id.cvExpenditure)
+
+        _btnIncome.setOnClickListener {
+            activity?.let {
+                val intent = Intent(it, activity_monitor::class.java)
+                intent.putExtra("income", true)
+                it.startActivity(intent)
+            }
+        }
+        _btnExpenditure.setOnClickListener {
+            activity?.let {
+                val intent = Intent(it, activity_monitor::class.java)
+                intent.putExtra("expenditure", true)
                 it.startActivity(intent)
             }
         }

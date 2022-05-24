@@ -21,6 +21,9 @@ class activity_monitor : AppCompatActivity() {
     lateinit var db : FirebaseFirestore
     lateinit var dbAuth : FirebaseAuth
 
+    var income : Boolean = false
+    var expenditure : Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_monitor)
@@ -34,6 +37,8 @@ class activity_monitor : AppCompatActivity() {
         _btnMonitorBack.setOnClickListener {
             onBackPressed()
         }
+        income = intent.getBooleanExtra("income", false)
+        expenditure = intent.getBooleanExtra("expenditure", false)
 
 
         readData(db)
@@ -45,14 +50,45 @@ class activity_monitor : AppCompatActivity() {
             .addOnSuccessListener {
                 arData.clear()
                 for (document in it){
+                    val cat = document.data.get("kategori").toString()
                     val newData = dataTransaction(
                         document.data.get("judul").toString(),
                         document.data.get("tanggal").toString(),
                         document.data.get("jumlah").toString(),
                         document.data.get("kategori").toString()
-
                     )
-                    arData.add(newData)
+                    if (income){
+                        if(cat == "Account Receivable" ||
+                            cat == "Additional Income"||
+                            cat == "Bonus"||
+                            cat == "Allowance"||
+                            cat == "Capital Gain"||
+                            cat == "Income"||
+                            cat == "Refund"||
+                            cat == "Salary"||
+                            cat == "Savings"||
+                            cat == "Business Profit"){
+                            arData.add(newData)
+                        }
+                    }
+                    else if (expenditure){
+                        if(cat != "Account Receivable" &&
+                            cat != "Additional Income"&&
+                            cat != "Bonus"&&
+                            cat != "Allowance"&&
+                            cat != "Capital Gain"&&
+                            cat != "Income"&&
+                            cat != "Refund"&&
+                            cat != "Salary"&&
+                            cat != "Savings"&&
+                            cat != "Business Profit"){
+                            arData.add(newData)
+                        }
+                    }
+                    else {
+                        arData.add(newData)
+                    }
+
                 }
                 adapter.notifyDataSetChanged()
             }

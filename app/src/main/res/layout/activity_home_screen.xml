@@ -54,12 +54,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvJumlahUang"
+        android:id="@+id/tvBalance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/poppinsbold"
-        android:text="Rp. 3.000.000"
+        android:text="Rp. "
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -71,8 +71,8 @@
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:background="@null"
-        app:layout_constraintStart_toEndOf="@+id/tvJumlahUang"
-        app:layout_constraintTop_toTopOf="@+id/tvJumlahUang"
+        app:layout_constraintStart_toEndOf="@+id/tvBalance"
+        app:layout_constraintTop_toTopOf="@+id/tvBalance"
         app:srcCompat="@drawable/show_password"
         app:tint="@color/white" />
 
@@ -84,8 +84,8 @@
         android:text="Your Balance"
         android:textColor="@color/white"
         android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="@+id/tvJumlahUang"
-        app:layout_constraintTop_toBottomOf="@+id/tvJumlahUang" />
+        app:layout_constraintStart_toStartOf="@+id/tvBalance"
+        app:layout_constraintTop_toBottomOf="@+id/tvBalance" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"

@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
+import androidx.cardview.widget.CardView
 import androidx.core.view.isVisible
 import com.google.common.base.CharMatcher.invisible
 import com.google.firebase.auth.FirebaseAuth
@@ -24,6 +25,7 @@ class activity_home_screen : AppCompatActivity() {
     lateinit var _btnHomeOff : AppCompatButton
     lateinit var _btnHomeOn : AppCompatButton
     lateinit var _btnAddData : AppCompatButton
+    lateinit var _tvBalance : TextView
 
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var db : FirebaseFirestore
@@ -90,5 +92,45 @@ class activity_home_screen : AppCompatActivity() {
             startActivity(Intent(this, addData::class.java))
         }
 
+
+        var income = 0
+        var expend = 0
+        _tvBalance = findViewById(R.id.tvBalance)
+
+        db.collection(firebaseAuth.currentUser!!.uid).get()
+            .addOnSuccessListener {
+                for (document in it) {
+                    val cat = document.data.get("kategori").toString()
+                    if (cat == "Account Receivable" ||
+                        cat == "Additional Income" ||
+                        cat == "Bonus" ||
+                        cat == "Allowance" ||
+                        cat == "Capital Gain" ||
+                        cat == "Income" ||
+                        cat == "Refund" ||
+                        cat == "Salary" ||
+                        cat == "Savings" ||
+                        cat == "Business Profit"){
+                        income += document.data.get("jumlah").toString().toInt()
+                    }
+
+                    if (cat != "Account Receivable" &&
+                        cat != "Additional Income" &&
+                        cat != "Bonus" &&
+                        cat != "Allowance" &&
+                        cat != "Capital Gain" &&
+                        cat != "Income" &&
+                        cat != "Refund" &&
+                        cat != "Salary" &&
+                        cat != "Savings" &&
+                        cat != "Business Profit"){
+                        expend += document.data.get("jumlah").toString().toInt()
+                    }
+                }
+                _tvBalance.setText("Rp. " + "%,d".format(income-expend))
+            }
+            .addOnFailureListener {
+
+            }
     }
 }

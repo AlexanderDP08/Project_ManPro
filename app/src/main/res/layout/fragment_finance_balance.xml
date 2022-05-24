@@ -26,7 +26,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
+            android:id="@+id/cvIncome"
             android:layout_width="170dp"
             android:layout_height="94dp"
             android:layout_marginStart="24dp"
@@ -55,13 +55,13 @@
                 android:fontFamily="@font/poppinsmedium"
                 android:paddingLeft="11sp"
                 android:paddingTop="40dp"
-                android:text="tvIncome"
                 android:textColor="@color/green"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cvExpenditure"
             android:layout_width="170dp"
             android:layout_height="94dp"
             android:layout_marginTop="8dp"
@@ -90,7 +90,6 @@
                 android:fontFamily="@font/poppinsmedium"
                 android:paddingLeft="11sp"
                 android:paddingTop="40dp"
-                android:text="tvExpend"
                 android:textColor="@color/red"
                 android:textSize="20sp" />
 
@@ -105,8 +104,8 @@
             android:text="Budget setting"
             android:textColor="@color/black"
             android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@+id/cardView"
-            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+            app:layout_constraintStart_toStartOf="@+id/cvIncome"
+            app:layout_constraintTop_toBottomOf="@+id/cvIncome" />
 
         <TextView
             android:id="@+id/tvShowall"

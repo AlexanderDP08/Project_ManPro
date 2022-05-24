@@ -4,7 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string-array name="category">
-        <item>Account receivable</item>
+        <item>Account Receivable</item>
         <item>Additional Income</item>
         <item>Allowance</item>
         <item>Bonus</item>
@@ -13,12 +13,45 @@
         <item>Cable TV</item>
         <item>Cafe</item>
         <item>Capital Gain</item>
-        <item>Cash withdrawal</item>
+        <item>Cash Withdrawal</item>
         <item>Children</item>
         <item>Cinema</item>
-        <item>Cost and taxes</item>
+        <item>Cost and Taxes</item>
         <item>Credit Cart</item>
+        <item>Debt</item>
         <item>Doctor Fee</item>
         <item>Domestic Helper</item>
+        <item>Drugs/Medicine</item>
+        <item>Education</item>
+        <item>Entertainment</item>
+        <item>Fashion</item>
+        <item>Food and Drinks</item>
+        <item>Gadget and Electronic</item>
+        <item>Games</item>
+        <item>Gas</item>
+        <item>Gifts</item>
+        <item>Groceries</item>
+        <item>Hobby</item>
+        <item>House and Apartment Rent</item>
+        <item>Housing</item>
+        <item>Income</item>
+        <item>Insurance</item>
+        <item>Investment</item>
+        <item>Mobile and Internet</item>
+        <item>Outgoing</item>
+        <item>Parking Fee</item>
+        <item>Personal Care</item>
+        <item>Pet</item>
+        <item>Renovation</item>
+        <item>Refund</item>
+        <item>Salary</item>
+        <item>Savings</item>
+        <item>Sports</item>
+        <item>Top up Wallet</item>
+        <item>Transportation</item>
+        <item>Utilities</item>
+        <item>Vehicle maintenance</item>
+        <item>Wedding</item>
+        <item>Others</item>
     </string-array>
 </resources>

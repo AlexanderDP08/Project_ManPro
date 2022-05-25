@@ -3,12 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/drawable/elilipse_green.xml" value="0.2235" />
-        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/drawable/ellipse_1.xml" value="0.2235" />
-        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/drawable/ellipse_purple.xml" value="0.2235" />
-        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/drawable/ellipse_red.xml" value="0.2235" />
-        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/drawable/ellipse_untuk_controlspending.xml" value="0.2235" />
-        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/drawable/email.xml" value="0.2235" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/drawable/frame_monthly_expenses.xml" value="0.3675" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/activity_account.xml" value="0.254981884057971" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/activity_add_baru.xml" value="0.33" />
@@ -30,7 +24,7 @@
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/fragment_fr_health_f_b.xml" value="0.22871376811594202" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/fragment_fr_income_f_b.xml" value="0.22871376811594202" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/fragment_monitor.xml" value="0.22871376811594202" />
-        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/rv_all_transaction_layout.xml" value="1.0" />
+        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/rv_all_transaction_layout.xml" value="0.5774193548387097" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/rvitem_transaction.xml" value="0.33" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project/Project_ManPro/app/src/main/res/layout-v31/activity_logo_loading.xml" value="0.17831813576494426" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project/Project_ManPro/app/src/main/res/layout/activity_account.xml" value="0.3625" />
@@ -48,6 +42,7 @@
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/drawable/elilipse_green.xml" value="0.26205128205128203" />
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/drawable/ellipse_purple.xml" value="0.26205128205128203" />
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/drawable/ellipse_red.xml" value="0.26205128205128203" />
+        <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/drawable/ellipse_untuk_controlspending.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/drawable/frame_add_data.xml" value="0.26205128205128203" />
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/drawable/frame_button_cancel.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/drawable/frame_button_confirm.xml" value="0.25833333333333336" />
@@ -74,7 +69,7 @@
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/layout/activity_sign_in.xml" value="0.24615384615384617" />
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/layout/activity_tambah.xml" value="0.23333333333333334" />
-        <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/layout/fragment_control_spending_1.xml" value="0.21666666666666667" />
+        <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/layout/fragment_control_spending_1.xml" value="0.264" />
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/layout/fragment_controlspending_utama.xml" value="0.264" />
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/layout/fragment_finance_balance.xml" value="0.264" />
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/layout/fragment_fr_groceries.xml" value="0.2359375" />
@@ -83,6 +78,9 @@
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/layout/fragment_fr_income_f_b.xml" value="0.264" />
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/layout/fragment_monitor.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/Ricky/Documents/Kuliah/Semester 6/Manpro TI/projek ManPro TI/Project_ManPro/app/src/main/res/layout/fragment_sign_up.xml" value="0.2323076923076923" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_home_screen.xml" value="0.13360507246376813" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/fragment_control_spending_1.xml" value="0.25" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/fragment_controlspending_utama.xml" value="0.25" />
       </map>
     </option>
   </component>

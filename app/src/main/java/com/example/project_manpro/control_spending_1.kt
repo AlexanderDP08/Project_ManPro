@@ -1,16 +1,21 @@
 package com.example.project_manpro
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.appcompat.widget.AppCompatButton
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
 
 /**
  * A simple [Fragment] subclass.
@@ -21,8 +26,12 @@ class control_spending_1 : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var fAuth : FirebaseAuth
+    private lateinit var db : FirebaseFirestore
     lateinit var _btnCancel:AppCompatButton
     lateinit var _btnConfirm:AppCompatButton
+    lateinit var _newLimit: EditText
+    lateinit var _newReminder: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +43,12 @@ class control_spending_1 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        fAuth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
+
+        _newLimit = view.findViewById(R.id.edNewLimit)
+        _newReminder = view.findViewById(R.id.edReminder)
+
         val fragmentMainControl = controlspending_utama()
         val fragmentM = parentFragmentManager
         _btnCancel=view.findViewById(R.id.cancel_control)
@@ -48,6 +63,14 @@ class control_spending_1 : Fragment() {
         }
 
         _btnConfirm.setOnClickListener {
+            if(_newLimit.text.toString() != ""){
+                val addLimit = climit(_newLimit.text.toString())
+                db.collection("limit").document(fAuth.currentUser!!.uid).set(addLimit)
+            }
+            if(_newReminder.text.toString() != ""){
+                val addReminder = creminder(_newReminder.text.toString())
+                db.collection("reminder").document(fAuth.currentUser!!.uid).set(addReminder)
+            }
             fragmentM.beginTransaction().apply {
                 replace(R.id.fragmentContainer, fragmentMainControl, controlspending_utama::class.java.simpleName)
                 addToBackStack(null)
@@ -56,6 +79,7 @@ class control_spending_1 : Fragment() {
         }
 
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

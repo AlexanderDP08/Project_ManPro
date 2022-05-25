@@ -17,6 +17,14 @@ data class uid (
     val username: String? = null
 )
 
+data class climit (
+    val limit: String? = null
+)
+
+data class creminder(
+    val reminder: String? = null
+)
+
 data class dataTransaction (
     val judul: String? = null,
     val tanggal: String? = null,

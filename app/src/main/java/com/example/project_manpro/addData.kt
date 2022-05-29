@@ -2,13 +2,17 @@ package com.example.project_manpro
 
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.widget.AppCompatButton
+import androidx.core.os.ConfigurationCompat
+import androidx.core.os.LocaleListCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.rpc.context.AttributeContext
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -30,12 +34,15 @@ class addData : AppCompatActivity() {
     lateinit var db : FirebaseFirestore
     lateinit var authdb : FirebaseAuth
 
+    lateinit var locale: Locale
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_data)
 
         db = FirebaseFirestore.getInstance()
         authdb = FirebaseAuth.getInstance()
+        locale = ConfigurationCompat.getLocales(Resources.getSystem().configuration).get(0)
 
         _etTransaction = findViewById(R.id.etTransaction)
         _etAmount = findViewById(R.id.etAmount)
@@ -109,7 +116,7 @@ class addData : AppCompatActivity() {
     }
 
     private fun updateDateInView() {
-        val myFormat = "MMM d, yyyy" // mention the format you need
+        val myFormat = "yyyy/MM/dd" // mention the format you need
         val sdf = SimpleDateFormat(myFormat, Locale.US)
         _tvDate!!.text = sdf.format(cal.getTime())
     }

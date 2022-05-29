@@ -2,6 +2,8 @@ package com.example.project_manpro
 
 import android.app.ProgressDialog
 import android.content.Intent
+import android.content.res.Resources
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,11 +12,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.cardview.widget.CardView
+import androidx.core.os.ConfigurationCompat
 import androidx.core.view.isVisible
 import com.google.common.base.CharMatcher.invisible
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import java.util.*
 
 class activity_home_screen : AppCompatActivity() {
 
@@ -128,9 +132,17 @@ class activity_home_screen : AppCompatActivity() {
                     }
                 }
                 _tvBalance.setText("Rp. " + "%,d".format(income-expend))
+                if((income-expend) < 0){
+                    _tvBalance.setTextColor(Color.RED)
+                }else if ((income-expend) >= 0){
+                    _tvBalance.setTextColor(Color.WHITE)
+                }else{
+
+                }
             }
             .addOnFailureListener {
 
             }
+
     }
 }

@@ -90,6 +90,8 @@ class activity_monitor : AppCompatActivity() {
                     }
 
                 }
+                arData.sortByDescending { it.tanggal }
+
                 adapter.notifyDataSetChanged()
             }
             .addOnFailureListener {

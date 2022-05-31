@@ -29,26 +29,25 @@ class activity_home_screen : AppCompatActivity() {
     lateinit var _btnControlOn : AppCompatButton
     lateinit var _btnHomeOff : AppCompatButton
     lateinit var _btnHomeOn : AppCompatButton
-    lateinit var _btnAddData : AppCompatButton
-    lateinit var _tvBalance : TextView
-    lateinit var _btnHideAmount : ImageButton
+        lateinit var _btnAddData : AppCompatButton
+        lateinit var _tvBalance : TextView
+        lateinit var _btnHideAmount : ImageButton
 
-    private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var db : FirebaseFirestore
+        private lateinit var firebaseAuth: FirebaseAuth
+        private lateinit var db : FirebaseFirestore
 
-    private lateinit var progressDialog : ProgressDialog
+        private lateinit var progressDialog : ProgressDialog
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home_screen)
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_home_screen)
 
-        progressDialog = ProgressDialog(this)
-        progressDialog.setTitle("Please wait")
-        progressDialog.setMessage("Loading Data...")
-        progressDialog.setCanceledOnTouchOutside(false)
+            progressDialog = ProgressDialog(this)
+            progressDialog.setTitle("Please wait")
+            progressDialog.setMessage("Loading Data...")
+            progressDialog.setCanceledOnTouchOutside(false)
 
-
-        db = FirebaseFirestore.getInstance()
+            db = FirebaseFirestore.getInstance()
         firebaseAuth = FirebaseAuth.getInstance()
 
         _btnAccPage = findViewById(R.id.ivAccountPage)
@@ -62,8 +61,6 @@ class activity_home_screen : AppCompatActivity() {
             .addOnSuccessListener {
                 _tvName.setText(it.data!!.get("username").toString())
             }
-
-
 
         val mFragmentManager = supportFragmentManager
         val mHomeScreen = financeBalance()

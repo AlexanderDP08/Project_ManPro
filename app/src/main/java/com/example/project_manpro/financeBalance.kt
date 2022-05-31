@@ -3,12 +3,14 @@ package com.example.project_manpro
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -37,6 +39,10 @@ class financeBalance : Fragment() {
     lateinit var dbAuth : FirebaseAuth
     lateinit var db : FirebaseFirestore
 
+    lateinit var _rvItem : RecyclerView
+    private var arData = arrayListOf<dataTransaction>()
+    val adapter = adapterAllData(arData)
+
     var income : Int = 0
     var expend : Int = 0
 
@@ -54,10 +60,6 @@ class financeBalance : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_finance_balance, container, false)
-
-
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -68,7 +70,8 @@ class financeBalance : Fragment() {
         _tvIncome = view.findViewById(R.id.tvIncome)
         _tvExpend = view.findViewById(R.id.tvExpend)
 
-        db.collection(dbAuth.currentUser!!.uid).get()
+        db.collection("UserData").document("TransactionData").collection(dbAuth.currentUser!!.uid)
+            .get()
             .addOnSuccessListener {
                 for (document in it) {
                     val cat = document.data.get("kategori").toString()
@@ -81,7 +84,8 @@ class financeBalance : Fragment() {
                         cat == "Refund" ||
                         cat == "Salary" ||
                         cat == "Savings" ||
-                        cat == "Business Profit"){
+                        cat == "Business Profit"
+                    ) {
                         income += document.data.get("jumlah").toString().toInt()
                     }
 
@@ -94,7 +98,8 @@ class financeBalance : Fragment() {
                         cat != "Refund" &&
                         cat != "Salary" &&
                         cat != "Savings" &&
-                        cat != "Business Profit"){
+                        cat != "Business Profit"
+                    ) {
                         expend += document.data.get("jumlah").toString().toInt()
                     }
                 }
@@ -132,6 +137,52 @@ class financeBalance : Fragment() {
                 it.startActivity(intent)
             }
         }
+
+        _rvItem = view.findViewById(R.id.rvItemFB)
+
+        readData(db)
+        printData()
+    }
+
+    private fun readData(db: FirebaseFirestore) {
+        var breaker = 3
+        db.collection("UserData").document("TransactionData").collection(dbAuth.currentUser!!.uid)
+            .get()
+            .addOnSuccessListener {
+                arData.clear()
+                for (document in it) {
+                    if(breaker == 0){
+                        break
+                    }else{
+                        breaker--
+                    }
+                    val newData = dataTransaction(
+                        document.data.get("id").toString(),
+                        document.data.get("judul").toString(),
+                        document.data.get("tanggal").toString(),
+                        document.data.get("jumlah").toString(),
+                        document.data.get("kategori").toString()
+                    )
+                    arData.add(newData)
+                }
+                arData.sortByDescending { it.tanggal }
+                adapter.notifyDataSetChanged()
+            }
+            .addOnFailureListener {
+                Log.e("DB FB Error: ", it.toString())
+            }
+    }
+
+    private fun printData() {
+        _rvItem.layoutManager = LinearLayoutManager(this.context)
+        _rvItem.adapter = adapter
+        adapter.setOnItemClickCallback(object : adapterAllData.OnItemClickCallback {
+            override fun onItemClicked(data: dataTransaction) {
+                val intent = Intent(activity, activity_monitor_detail::class.java)
+                intent.putExtra("dataTransaction",data)
+                startActivity(intent)
+            }
+        })
     }
 
     companion object {

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.widget.AppCompatButton
@@ -15,6 +16,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.rpc.context.AttributeContext
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 class addData : AppCompatActivity() {
     lateinit var categorySpinner : Spinner
@@ -44,17 +46,17 @@ class addData : AppCompatActivity() {
         authdb = FirebaseAuth.getInstance()
         locale = ConfigurationCompat.getLocales(Resources.getSystem().configuration).get(0)
 
-        _etTransaction = findViewById(R.id.etTransaction)
-        _etAmount = findViewById(R.id.etAmount)
+        _etTransaction = findViewById(R.id.etEditTransaction)
+        _etAmount = findViewById(R.id.etEditAmount)
 
-        _btnBack = findViewById(R.id.btnBacktoHome)
+        _btnBack = findViewById(R.id.btnBacktoList)
         _btnBack.setOnClickListener {
             onBackPressed()
         }
 
         //getDate
         _tvDate = findViewById(R.id.tvDate)
-        _btnDate = findViewById(R.id.btnDate)
+        _btnDate = findViewById(R.id.btnEditDate)
         val dateSetListener = object : DatePickerDialog.OnDateSetListener {
             override fun onDateSet(view: DatePicker, year: Int, monthOfYear: Int,
                                    dayOfMonth: Int) {
@@ -78,7 +80,7 @@ class addData : AppCompatActivity() {
         })
 
         //Category Spinner
-        categorySpinner = findViewById(R.id.categorySpinner)
+        categorySpinner = findViewById(R.id.spEditCategory)
         val AdapterSPCategory = ArrayAdapter.createFromResource(this,
             R.array.category, R.layout.spinner_item)
         AdapterSPCategory.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -86,8 +88,8 @@ class addData : AppCompatActivity() {
 
 
 
-        _btnCancel = findViewById(R.id.btnCancel)
-        _btnConfirm = findViewById(R.id.btnConfirm)
+        _btnCancel = findViewById(R.id.btnEditCancel)
+        _btnConfirm = findViewById(R.id.btnEditConfirm)
         _btnCancel.setOnClickListener {
             onBackPressed()
         }
@@ -100,9 +102,10 @@ class addData : AppCompatActivity() {
     }
 
     private fun addtoDatabase(db: FirebaseFirestore, judul: String, tanggal: String, jumlah: String, kategory: String) {
-        val data = dataTransaction(judul, tanggal, jumlah, kategory)
-        db.collection(authdb.currentUser!!.uid)
-            .add(data)
+        val docID = genDocID()
+        val data = dataTransaction(docID, judul, tanggal, jumlah, kategory)
+        db.collection("UserData").document("TransactionData").collection(authdb.currentUser!!.uid).document(docID)
+            .set(data)
             .addOnSuccessListener {
                 Toast.makeText(this@addData, "Data added", Toast.LENGTH_LONG)
                     .show()
@@ -124,5 +127,20 @@ class addData : AppCompatActivity() {
     fun getCategory(id: Spinner): String {
         return id.selectedItem.toString()
         //Toast.makeText(this, spiner.selectedItem.toString(), Toast.LENGTH_LONG).show()
+    }
+
+    fun genDocID() : String{
+
+        val myChar = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+        val random = Random(System.nanoTime())
+        val id = StringBuilder()
+
+        for (i in 0 until 20){
+            val rIndex = random.nextInt(myChar.length)
+            id.append(myChar[rIndex])
+        }
+
+        return id.toString()
     }
 }

@@ -67,6 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <ImageButton
+        android:id="@+id/hideAmount"
         android:layout_width="56dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"

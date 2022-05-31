@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
@@ -30,13 +31,22 @@ class activity_home_screen : AppCompatActivity() {
     lateinit var _btnHomeOn : AppCompatButton
     lateinit var _btnAddData : AppCompatButton
     lateinit var _tvBalance : TextView
+    lateinit var _btnHideAmount : ImageButton
 
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var db : FirebaseFirestore
 
+    private lateinit var progressDialog : ProgressDialog
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_screen)
+
+        progressDialog = ProgressDialog(this)
+        progressDialog.setTitle("Please wait")
+        progressDialog.setMessage("Loading Data...")
+        progressDialog.setCanceledOnTouchOutside(false)
+
 
         db = FirebaseFirestore.getInstance()
         firebaseAuth = FirebaseAuth.getInstance()
@@ -48,13 +58,12 @@ class activity_home_screen : AppCompatActivity() {
             startActivity(Intent(this, activity_account::class.java))
         }
 
-        db.collection("username").document(firebaseAuth.uid.toString()).get()
-            .addOnSuccessListener { doc ->
-                _tvName.text = doc.data!!["username"].toString()
+        db.collection("username").document(firebaseAuth.currentUser!!.uid).get()
+            .addOnSuccessListener {
+                _tvName.setText(it.data!!.get("username").toString())
             }
-            .addOnFailureListener {
 
-            }
+
 
         val mFragmentManager = supportFragmentManager
         val mHomeScreen = financeBalance()
@@ -97,12 +106,30 @@ class activity_home_screen : AppCompatActivity() {
         }
 
 
+
+        _tvBalance = findViewById(R.id.tvBalance)
+        getBalance()
+
+
+        _btnHideAmount = findViewById(R.id.hideAmount)
+        _btnHideAmount.setOnClickListener {
+            if(_tvBalance.text == "Rp. ****"){
+                getBalance()
+            }else{
+                _tvBalance.setTextColor(Color.WHITE)
+                _tvBalance.setText("Rp. ****")
+            }
+        }
+
+    }
+
+    private fun getBalance (){
+        progressDialog.show()
         var income = 0
         var expend = 0
-        _tvBalance = findViewById(R.id.tvBalance)
-
-        db.collection(firebaseAuth.currentUser!!.uid).get()
+        db.collection("UserData").document("TransactionData").collection(firebaseAuth.currentUser!!.uid).get()
             .addOnSuccessListener {
+                progressDialog.dismiss()
                 for (document in it) {
                     val cat = document.data.get("kategori").toString()
                     if (cat == "Account Receivable" ||
@@ -139,10 +166,10 @@ class activity_home_screen : AppCompatActivity() {
                 }else{
 
                 }
+
             }
             .addOnFailureListener {
 
             }
-
     }
 }

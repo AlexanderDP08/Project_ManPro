@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.util.*
 
 class activity_sign_up : AppCompatActivity() {
 
@@ -72,8 +73,16 @@ class activity_sign_up : AppCompatActivity() {
 
                 //Add Username to Username Database with Firebase Firestore
                 var addData = uid(_edName.text.toString().trim())
+                var addLimit = climit("-")
+                var addReminder = creminder("-")
                 db = FirebaseFirestore.getInstance()
+
+//                val docID = genDocID()
+//                var addData = uid(_edName.text.toString().trim(), docID)
+//                db.collection("UserData").document("Username").collection(firebaseUser.uid).document(docID).set(addData)
                 db.collection("username").document(firebaseUser.uid).set(addData)
+                db.collection("limit").document(firebaseUser.uid).set(addLimit)
+                db.collection("reminder").document(firebaseUser.uid).set(addReminder)
 
                 progressDialog.dismiss()
                 Toast.makeText(
@@ -93,5 +102,18 @@ class activity_sign_up : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+    }
+
+    fun genDocID() : String{
+        val myChar = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        val random = Random(System.nanoTime())
+        val id = StringBuilder()
+
+        for (i in 0 until 20){
+            val rIndex = random.nextInt(myChar.length)
+            id.append(myChar[rIndex])
+        }
+
+        return id.toString()
     }
 }

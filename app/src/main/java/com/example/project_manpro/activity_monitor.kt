@@ -1,9 +1,9 @@
 package com.example.project_manpro
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -31,7 +31,7 @@ class activity_monitor : AppCompatActivity() {
         db = FirebaseFirestore.getInstance()
         dbAuth = FirebaseAuth.getInstance()
 
-        _rvItem = findViewById(R.id.rvItem)
+        _rvItem = findViewById(R.id.rvItemFB)
 
         _btnMonitorBack = findViewById(R.id.btnMonitorBack)
         _btnMonitorBack.setOnClickListener {
@@ -42,16 +42,17 @@ class activity_monitor : AppCompatActivity() {
 
 
         readData(db)
-        viewData()
+        printData()
     }
 
     private fun readData(db: FirebaseFirestore) {
-        db.collection(dbAuth.currentUser!!.uid).get()
+        db.collection("UserData").document("TransactionData").collection(dbAuth.currentUser!!.uid).get()
             .addOnSuccessListener {
                 arData.clear()
                 for (document in it){
                     val cat = document.data.get("kategori").toString()
                     val newData = dataTransaction(
+                        document.data.get("id").toString(),
                         document.data.get("judul").toString(),
                         document.data.get("tanggal").toString(),
                         document.data.get("jumlah").toString(),
@@ -91,7 +92,6 @@ class activity_monitor : AppCompatActivity() {
 
                 }
                 arData.sortByDescending { it.tanggal }
-
                 adapter.notifyDataSetChanged()
             }
             .addOnFailureListener {
@@ -100,10 +100,17 @@ class activity_monitor : AppCompatActivity() {
 
     }
 
-    private fun viewData() {
+    private fun printData() {
         _rvItem.layoutManager = LinearLayoutManager(this)
         //_rvData.setHasFixedSize(true)
         //adapter = adapterHistory(arData)
         _rvItem.adapter = adapter
+        adapter.setOnItemClickCallback(object : adapterAllData.OnItemClickCallback {
+            override fun onItemClicked(data: dataTransaction) {
+                val intent = Intent(this@activity_monitor, activity_monitor_detail::class.java)
+                intent.putExtra("dataTransaction",data)
+                startActivity(intent)
+            }
+        })
     }
 }

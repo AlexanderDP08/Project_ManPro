@@ -1,40 +1,80 @@
 package com.example.project_manpro
 
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
+import android.os.Parcel
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import java.sql.Time
-import java.text.DecimalFormat
-import java.text.NumberFormat
 
 data class uid (
-    val username: String? = null
+    var username : String?
 )
 
 data class climit (
-    val limit: String? = null
+    val limit : String? = null
 )
 
 data class creminder(
-    val reminder: String? = null
+    val reminder : String? = null
 )
 
-data class dataTransaction (
-    val judul: String? = null,
-    val tanggal: String? = null,
-    val jumlah: String? = null,
-    val kategori: String? = null
-)
+
+data class dataTransaction(
+    var id: String?,
+    var judul: String?,
+    var tanggal: String?,
+    var jumlah: String?,
+    var kategori: String?
+) : Parcelable {
+    constructor(parcel: Parcel) : this(
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString()
+    ) {
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(id)
+        parcel.writeString(judul)
+        parcel.writeString(tanggal)
+        parcel.writeString(jumlah)
+        parcel.writeString(kategori)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<dataTransaction> {
+        override fun createFromParcel(parcel: Parcel): dataTransaction {
+            return dataTransaction(parcel)
+        }
+
+        override fun newArray(size: Int): Array<dataTransaction?> {
+            return arrayOfNulls(size)
+        }
+    }
+}
 
 class adapterAllData (private val listItem: ArrayList<dataTransaction>) :
         RecyclerView.Adapter<adapterAllData.ListViewHolder>()
 {
+    private lateinit var onitemClickCallback : OnItemClickCallback
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data : dataTransaction)
+    }
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback){
+        this.onitemClickCallback = onItemClickCallback
+    }
+
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val _circle = itemView.findViewById<ImageView>(R.id.ivCircle)
         val _logo = itemView.findViewById<ImageView>(R.id.ivLogo)
@@ -205,6 +245,10 @@ class adapterAllData (private val listItem: ArrayList<dataTransaction>) :
             holder._min.visibility = View.VISIBLE
         }
         holder._jumlah.setText("%,d".format(itemDetails.jumlah.toString().toInt()))
+
+        holder._circle.setOnClickListener {
+            onitemClickCallback.onItemClicked(listItem[position])
+        }
     }
 
     override fun getItemCount(): Int {

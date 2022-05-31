@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".activity_monitor_detail"
+            android:exported="false" />
+        <activity
             android:name=".activity_home_screen"
             android:exported="true" />
         <activity
@@ -19,7 +22,7 @@
             android:exported="true" />
         <activity
             android:name=".activity_monitor"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".activity_account"
             android:exported="true" />

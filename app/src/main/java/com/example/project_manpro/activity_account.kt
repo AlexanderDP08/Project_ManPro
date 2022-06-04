@@ -14,6 +14,7 @@ class activity_account : AppCompatActivity() {
     private lateinit var db : FirebaseFirestore
     lateinit var _btnLogout : Button
     lateinit var _btnBack : Button
+    lateinit var _tvEditProfile : TextView
 
     lateinit var _tvName : TextView
     lateinit var _tvEmail : TextView
@@ -32,6 +33,11 @@ class activity_account : AppCompatActivity() {
         _btnLogout = findViewById(R.id.btAccountLogout)
         _btnBack = findViewById(R.id.ibAccountBack)
 
+        _tvEditProfile = findViewById(R.id.tvEditProfile)
+        _tvEditProfile.setOnClickListener {
+            startActivity(Intent(this, activity_edit_account::class.java))
+        }
+
         db.collection("username").document(fAuth.uid.toString()).get()
             .addOnSuccessListener { doc ->
                 _tvName.text = doc.data!!["username"].toString()
@@ -44,7 +50,8 @@ class activity_account : AppCompatActivity() {
 
 
         _btnBack.setOnClickListener {
-            onBackPressed()
+            startActivity(Intent(this, activity_home_screen::class.java))
+            finish()
         }
 
         _btnLogout.setOnClickListener {

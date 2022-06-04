@@ -88,68 +88,53 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ellipse_8" />
+            app:layout_constraintTop_toBottomOf="@+id/tvSpending4" />
 
         <ImageView
             android:layout_width="80dp"
             android:layout_height="150dp"
-            android:layout_marginTop="56dp"
             android:scaleType="centerCrop"
             android:src="@drawable/bear_jempol"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSpending1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/ivLimit" />
+            app:layout_constraintTop_toTopOf="@+id/tvSpending1" />
 
         <ImageView
-            android:id="@+id/ivLimit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/frame_your_spending"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-        <ImageView
-            android:id="@+id/ellipse_8"
+            android:id="@+id/tvSpending4"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/frame_your_spending"
             android:elevation="6dp"
-            app:layout_constraintStart_toStartOf="@+id/ellipse_9"
-            app:layout_constraintTop_toBottomOf="@+id/ellipse_9" />
+            app:layout_constraintStart_toStartOf="@+id/tvSpending2"
+            app:layout_constraintTop_toBottomOf="@+id/tvSpending2" />
 
         <ImageView
-            android:id="@+id/ellipse_10"
+            android:id="@+id/tvSpending3"
             android:layout_width="20dp"
-            android:layout_height="21dp"
+            android:layout_height="20dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="16dp"
-            android:background="@drawable/frame_your_spending"
             android:elevation="6dp"
-            app:layout_constraintBottom_toBottomOf="@+id/ellipse_9"
-            app:layout_constraintStart_toEndOf="@+id/ellipse_9"
-            app:layout_constraintTop_toTopOf="@+id/ellipse_9"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSpending2"
+            app:layout_constraintStart_toEndOf="@+id/tvSpending2"
+            app:layout_constraintTop_toTopOf="@+id/tvSpending2"
             app:layout_constraintVertical_bias="0.1" />
 
         <ImageView
-            android:id="@+id/ellipse_9"
+            android:id="@+id/tvSpending2"
             android:layout_width="41dp"
             android:layout_height="41dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/frame_your_spending"
             android:elevation="6dp"
-            app:layout_constraintStart_toStartOf="@+id/ivLimit"
-            app:layout_constraintTop_toBottomOf="@+id/ivLimit" />
+            app:layout_constraintStart_toStartOf="@+id/tvSpending1"
+            app:layout_constraintTop_toBottomOf="@+id/tvSpending1" />
 
         <TextView
             android:id="@+id/textView10"
@@ -160,23 +145,22 @@
             android:text="Your Spending"
             android:textColor="@color/black"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@+id/ivLimit"
-            app:layout_constraintHorizontal_bias="0.393"
-            app:layout_constraintStart_toStartOf="@+id/ivLimit"
+            app:layout_constraintEnd_toEndOf="@+id/tvSpending1"
+            app:layout_constraintStart_toStartOf="@+id/tvSpending1"
             app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserratmedium"
-            android:text="8%"
+            android:id="@+id/tvSpending1"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserratsemibold"
+            android:gravity="center"
             android:textColor="@color/black"
-            android:textSize="40sp"
-            app:layout_constraintBottom_toBottomOf="@+id/ivLimit"
-            app:layout_constraintEnd_toEndOf="@+id/ivLimit"
-            app:layout_constraintHorizontal_bias="0.46"
-            app:layout_constraintStart_toStartOf="@+id/ivLimit"
-            app:layout_constraintTop_toTopOf="@+id/ivLimit" />
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

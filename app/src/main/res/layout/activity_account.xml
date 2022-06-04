@@ -12,15 +12,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clAccount"
         android:layout_width="334dp"
-        android:layout_height="500dp"
+        android:layout_height="0dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/white_sheet"
         android:clipToOutline="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="70dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ibAccountBack"
@@ -37,17 +39,17 @@
 
         <TextView
             android:id="@+id/viewAccountProfile"
-            android:layout_width="260dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="20dp"
-            android:background="@drawable/rectangel_6"
-            android:text="PROFILE"
+            android:background="@drawable/rounded_btnedittext"
             android:fontFamily="@font/montserratsemibolditalic"
+            android:gravity="center"
+            android:text="PROFILE"
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ibAccountBack" />
@@ -56,159 +58,119 @@
             android:id="@+id/ll_account"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewAccountProfile"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp">
+            app:layout_constraintTop_toBottomOf="@+id/viewAccountProfile">
 
             <FrameLayout
+                android:id="@+id/flAccountProfile"
                 android:layout_width="fill_parent"
                 android:layout_height="50dp"
-                android:id="@+id/flAccountProfile"
                 android:layout_weight="0">
 
                 <ImageView
                     android:id="@+id/ivAccountProfile"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:backgroundTint="@color/black"
+                    android:layout_gravity="left"
                     android:background="@drawable/profile_2"
-                    android:layout_gravity="left"/>
+                    android:backgroundTint="@color/black" />
 
                 <TextView
                     android:id="@+id/tvAccountProfile"
-                    android:layout_width="210dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_gravity="right"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="60dp"
                     android:background="@null"
                     android:fontFamily="@font/montserratsemibold"
-                    android:gravity="center"
+                    android:gravity="center_vertical"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
             </FrameLayout>
 
             <TextView
+                android:id="@+id/tvAccountBorder1"
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:background="@drawable/border"
-                android:id="@+id/tvAccountBorder1"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:background="@drawable/border" />
 
             <FrameLayout
+                android:id="@+id/flAccountEmail"
                 android:layout_width="fill_parent"
                 android:layout_height="50dp"
-                android:id="@+id/flAccountEmail"
-                android:layout_weight="2">
+                android:layout_weight="0">
 
                 <ImageView
                     android:id="@+id/ivAccountEmail"
                     android:layout_width="50dp"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:layout_gravity="left"
                     android:background="@drawable/email"
-                    android:backgroundTint="@color/black"
-                    android:layout_marginTop="5dp" />
+                    android:backgroundTint="@color/black" />
 
                 <TextView
                     android:id="@+id/tvAccountEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="60dp"
+                    android:background="@null"
+                    android:fontFamily="@font/montserratsemibold"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvAccountBorder2"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="0.5dp"
+                android:layout_weight="1"
+                android:background="@drawable/border" />
+
+            <FrameLayout
+                android:id="@+id/flAccountEditProfile"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_weight="6">
+
+                <ImageView
+                    android:id="@+id/ivAccountEditProfile"
+                    android:layout_width="36dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edit_profile"
+                    android:backgroundTint="@color/light_blue" />
+
+                <TextView
+                    android:id="@+id/tvEditProfile"
                     android:layout_width="210dp"
                     android:layout_height="50dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
                     android:layout_gravity="right"
                     android:background="@null"
-                    android:fontFamily="@font/montserratsemibold"
+                    android:fontFamily="@font/montserratmedium"
                     android:gravity="center"
+                    android:text="Edit Profile"
                     android:textColor="@color/black"
                     android:textSize="20dp" />
             </FrameLayout>
 
             <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="@drawable/border"
-                android:id="@+id/tvAccountBorder2"
-                android:layout_weight="3"/>
-
-            <FrameLayout
-                android:layout_width="fill_parent"
-                android:layout_height="50dp"
-                android:id="@+id/flAccountPassword"
-                android:layout_weight="4">
-
-                <ImageView
-                    android:id="@+id/ivAccountPassword"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="left"
-                    android:background="@drawable/key"
-                    android:backgroundTint="@color/yellow"
-                    />
-
-                <TextView
-                    android:id="@+id/tvAccountPassword"
-                    android:layout_width="210dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:background="@null"
-                    android:text="***********"
-                    android:fontFamily="@font/montserratsemibold"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:gravity="center"
-                    android:layout_gravity="right"/>
-            </FrameLayout>
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="@drawable/border"
-                android:id="@+id/tvAccountBorder3"
-                android:layout_weight="5"/>
-
-            <FrameLayout
-                android:layout_width="fill_parent"
-                android:layout_height="50dp"
-                android:id="@+id/flAccountEditProfile"
-                android:layout_weight="6"
-                android:layout_marginTop="30dp">
-
-                <ImageView
-                    android:id="@+id/ivAccountEditProfile"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:layout_gravity="left"
-                    android:background="@drawable/edit_profile"
-                    android:backgroundTint="@color/light_blue"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginLeft="8dp"
-                    />
-
-                <TextView
-                    android:id="@+id/tvAccountEditProfile"
-                    android:layout_width="210dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:background="@null"
-                    android:text="Edit Profile"
-                    android:fontFamily="@font/montserratmedium"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:gravity="center"
-                    android:layout_gravity="right"/>
-            </FrameLayout>
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="@drawable/border"
                 android:id="@+id/tvAccountBorder4"
-                android:layout_weight="7"/>
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_weight="7"
+                android:background="@drawable/border" />
 
         </LinearLayout>
 
@@ -218,18 +180,23 @@
             android:layout_height="50dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/cancel"
-            android:text="Logout"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/montserratsemibold"
-            android:textColor="@color/white"
             android:drawableLeft="@drawable/logout"
             android:drawablePadding="5dp"
+            android:fontFamily="@font/montserratsemibold"
             android:paddingLeft="20dp"
             android:paddingRight="10dp"
+            android:text="Logout"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll_account" />
+            app:layout_constraintTop_toBottomOf="@+id/ll_account"
+            app:layout_constraintVertical_bias="0.07999998" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

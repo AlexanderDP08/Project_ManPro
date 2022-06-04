@@ -1,5 +1,6 @@
 package com.example.project_manpro
 
+import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlin.math.exp
 
 class activity_monitor : AppCompatActivity() {
     lateinit var _btnMonitorBack : Button
@@ -21,17 +23,56 @@ class activity_monitor : AppCompatActivity() {
     lateinit var db : FirebaseFirestore
     lateinit var dbAuth : FirebaseAuth
 
+    lateinit var _btnIncome : Button
+    lateinit var _btnExpend : Button
+
     var income : Boolean = false
     var expenditure : Boolean = false
+
+    private lateinit var progressDialog : ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_monitor)
 
+        progressDialog = ProgressDialog(this)
+        progressDialog.setTitle("Please wait")
+        progressDialog.setMessage("Loading Data...")
+        progressDialog.setCanceledOnTouchOutside(false)
+
         db = FirebaseFirestore.getInstance()
         dbAuth = FirebaseAuth.getInstance()
 
         _rvItem = findViewById(R.id.rvItemFB)
+
+        _btnIncome = findViewById(R.id.btnIncomeME)
+        _btnExpend = findViewById(R.id.btnExpendME)
+
+        _btnIncome.setOnClickListener {
+            if(income){
+                income = false
+                expenditure = false
+                readData(db)
+            }
+            else {
+                income = true
+                expenditure = false
+                readData(db)
+            }
+        }
+        _btnExpend.setOnClickListener {
+            if(expenditure){
+                income = false
+                expenditure = false
+                readData(db)
+            }
+            else {
+                income = false
+                expenditure = true
+                readData(db)
+            }
+
+        }
 
         _btnMonitorBack = findViewById(R.id.btnMonitorBack)
         _btnMonitorBack.setOnClickListener {
@@ -46,8 +87,10 @@ class activity_monitor : AppCompatActivity() {
     }
 
     private fun readData(db: FirebaseFirestore) {
+        progressDialog.show()
         db.collection("UserData").document("TransactionData").collection(dbAuth.currentUser!!.uid).get()
             .addOnSuccessListener {
+                progressDialog.dismiss()
                 arData.clear()
                 for (document in it){
                     val cat = document.data.get("kategori").toString()

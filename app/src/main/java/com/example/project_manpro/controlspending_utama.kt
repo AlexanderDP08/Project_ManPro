@@ -1,12 +1,13 @@
 package com.example.project_manpro
 
-import android.content.Intent
+import android.app.ProgressDialog
 import android.os.Bundle
-import android.preference.PreferenceManager
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import com.google.firebase.auth.FirebaseAuth
@@ -30,6 +31,19 @@ class controlspending_utama : Fragment() {
     private lateinit var db : FirebaseFirestore
     lateinit var _btnEdit : AppCompatButton
 
+    var limit : Double = 0.0
+    var spending : Double = 0.0
+
+    lateinit var _tv1 : TextView
+    lateinit var _tv2 : ImageView
+    lateinit var _tv3: ImageView
+    lateinit var _tv4 : ImageView
+
+    lateinit var myLimit : TextView
+    lateinit var myReminder : TextView
+
+    private lateinit var progressDialog : ProgressDialog
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,22 +57,45 @@ class controlspending_utama : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val myLimit = view.findViewById<TextView>(R.id.textView13)
-        val myReminder = view.findViewById<TextView>(R.id.textView11)
+        myLimit = view.findViewById(R.id.textView13)
+        myReminder = view.findViewById(R.id.textView11)
         fAuth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
 
+        progressDialog = ProgressDialog(activity)
+        progressDialog.setTitle("Please wait")
+        progressDialog.setMessage("Loading Data...")
+        progressDialog.setCanceledOnTouchOutside(false)
+
+        _tv1 = view.findViewById(R.id.tvSpending1)
+        _tv2 = view.findViewById(R.id.tvSpending2)
+        _tv3 = view.findViewById(R.id.tvSpending3)
+        _tv4 = view.findViewById(R.id.tvSpending4)
+
+        progressDialog.show()
         db.collection("limit").document(fAuth.currentUser!!.uid).get()
             .addOnSuccessListener { doc ->
-                myLimit.text = doc.data!!["limit"].toString()
-            }
-            .addOnFailureListener {
-                print(it)
-            }
+                limit = doc.data!!["limit"].toString().toDouble()
+                myLimit.text = limit.toString()
+                db.collection("reminder").document(fAuth.currentUser!!.uid).get()
+                    .addOnSuccessListener { doc ->
+                        progressDialog.dismiss()
+                        spending = doc.data!!["reminder"].toString().toDouble()
+                        myReminder.text = spending.toString()
 
-        db.collection("reminder").document(fAuth.currentUser!!.uid).get()
-            .addOnSuccessListener { doc ->
-                myReminder.text = doc.data!!["reminder"].toString()
+                        var persen = (spending/limit)*100
+                        _tv1.text = "$persen%"
+
+                        setSpendingBackground(persen)
+
+                        Log.e("Hasil Persen: ", persen.toString())
+                        Log.e("Hasil Limit: ", limit.toString())
+                        Log.e("Hasil Spending: ", spending.toString())
+                    }
+                    .addOnFailureListener {
+                        print(it)
+                    }
+
             }
             .addOnFailureListener {
                 print(it)
@@ -73,6 +110,21 @@ class controlspending_utama : Fragment() {
                 addToBackStack(null)
                 commit()
             }
+        }
+    }
+
+    private fun setSpendingBackground(persen : Double) {
+        if(persen >= 100.0){
+            _tv1.setBackgroundResource(R.drawable.frame_button_tambah)
+            _tv2.setBackgroundResource(R.drawable.frame_button_tambah)
+            _tv3.setBackgroundResource(R.drawable.frame_button_tambah)
+            _tv4.setBackgroundResource(R.drawable.frame_button_tambah)
+        }
+        else{
+            _tv1.setBackgroundResource(R.drawable.frame_your_spending)
+            _tv2.setBackgroundResource(R.drawable.frame_your_spending)
+            _tv3.setBackgroundResource(R.drawable.frame_your_spending)
+            _tv4.setBackgroundResource(R.drawable.frame_your_spending)
         }
     }
 

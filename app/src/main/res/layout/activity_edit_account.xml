@@ -12,18 +12,20 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clAccount"
         android:layout_width="334dp"
-        android:layout_height="360dp"
+        android:layout_height="0dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/white_sheet"
         android:clipToOutline="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="70dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/ibEditAccountBack"
+            android:id="@+id/btnBacktoProfile"
             android:layout_width="46dp"
             android:layout_height="46dp"
             android:layout_alignParentLeft="true"
@@ -42,114 +44,78 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="20dp"
-            android:background="@drawable/rectangel_6"
-            android:text="EDIT PROFILE"
+            android:background="@drawable/rounded_btnedittext"
             android:fontFamily="@font/montserratsemibolditalic"
+            android:gravity="center"
+            android:text="EDIT PROFILE"
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ibEditAccountBack" />
+            app:layout_constraintTop_toBottomOf="@+id/btnBacktoProfile" />
 
         <LinearLayout
             android:id="@+id/llEditAccount"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewEditAccountProfile"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp">
+            app:layout_constraintTop_toBottomOf="@+id/viewEditAccountProfile">
 
             <FrameLayout
+                android:id="@+id/flEditAccountProfile"
                 android:layout_width="fill_parent"
                 android:layout_height="50dp"
-                android:id="@+id/flEditAccountProfile"
                 android:layout_weight="0">
 
                 <ImageView
                     android:id="@+id/ivEditAccountProfile"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:backgroundTint="@color/black"
-                    android:background="@drawable/profile_2"
-                    android:layout_gravity="left"/>
-
-                <EditText
-                    android:id="@+id/etEditAccountProfile"
-                    android:layout_width="210dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:background="@null"
-                    android:hint="Input New Name"
-                    android:textColorHint="@color/et_hint"
-                    android:fontFamily="@font/montserratsemibold"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:gravity="center"
-                    android:layout_gravity="right"/>
-            </FrameLayout>
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="@drawable/border"
-                android:id="@+id/tvEditAccountBorder1"
-                android:layout_weight="1"/>
-
-
-
-            <FrameLayout
-                android:layout_width="fill_parent"
-                android:layout_height="50dp"
-                android:id="@+id/flEditAccountPassword"
-                android:layout_weight="4">
-
-                <ImageView
-                    android:id="@+id/ivEditAccountPassword"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
                     android:layout_gravity="left"
-                    android:background="@drawable/key"
-                    android:backgroundTint="@color/yellow"
-                    />
+                    android:background="@drawable/profile_2"
+                    android:backgroundTint="@color/black" />
 
                 <EditText
-                    android:id="@+id/etEditAccountPassword"
-                    android:layout_width="210dp"
+                    android:id="@+id/edUsername"
+                    android:layout_width="200dp"
                     android:layout_height="50dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:background="@null"
-                    android:hint="Input New Password"
-                    android:textColorHint="@color/et_hint"
+                    android:layout_marginStart="60dp"
+                    android:ems="10"
                     android:fontFamily="@font/montserratsemibold"
+                    android:hint="Username"
+                    android:inputType="textPersonName"
                     android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:gravity="center"
-                    android:layout_gravity="right"/>
+                    android:textColorHint="@color/et_hint" />
+
             </FrameLayout>
 
             <TextView
+                android:id="@+id/tvEditAccountBorder1"
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:background="@drawable/border"
-                android:id="@+id/tvEditAccountBorder3"
-                android:layout_weight="5"/>
+                android:layout_weight="1"
+                android:background="@drawable/border" />
+
 
         </LinearLayout>
 
         <FrameLayout
             android:id="@+id/flAccountEditProfile"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginTop="30dp"
             android:layout_marginHorizontal="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/llEditAccount">
+            app:layout_constraintTop_toBottomOf="@+id/llEditAccount"
+            app:layout_constraintVertical_bias="0.07999998">
 
             <ImageView
                 android:id="@+id/ivEditAccountConfirm"
@@ -162,7 +128,7 @@
                 android:backgroundTint="@color/green" />
 
             <TextView
-                android:id="@+id/tvEditAccountConfirm"
+                android:id="@+id/tvConfirmER"
                 android:layout_width="210dp"
                 android:layout_height="50dp"
                 android:layout_alignParentLeft="true"

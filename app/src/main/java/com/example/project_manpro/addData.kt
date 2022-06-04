@@ -1,6 +1,10 @@
 package com.example.project_manpro
 
 import android.app.DatePickerDialog
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
 import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +13,7 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.widget.AppCompatButton
+import androidx.core.app.NotificationCompat
 import androidx.core.os.ConfigurationCompat
 import androidx.core.os.LocaleListCompat
 import com.google.firebase.auth.FirebaseAuth
@@ -94,11 +99,15 @@ class addData : AppCompatActivity() {
             onBackPressed()
         }
         _btnConfirm.setOnClickListener {
-            //add data to database here
-            addtoDatabase(db, _etTransaction.text.toString(), _tvDate.text.toString(), _etAmount.text.toString(), getCategory(categorySpinner))
-            startActivity(Intent(this, activity_home_screen::class.java))
+           addtoDatabase(db, _etTransaction.text.toString(), _tvDate.text.toString(), _etAmount.text.toString(), getCategory(categorySpinner))
+            //checkLimit()
+           startActivity(Intent(this, activity_home_screen::class.java))
             finish()
         }
+    }
+
+    private fun checkLimit() {
+        showNotification("Control Spending 50%","You have used 50% of your current spending limit.")
     }
 
     private fun addtoDatabase(db: FirebaseFirestore, judul: String, tanggal: String, jumlah: String, kategory: String) {
@@ -142,5 +151,25 @@ class addData : AppCompatActivity() {
         }
 
         return id.toString()
+    }
+
+    fun showNotification(title: String, message: String) {
+        val mNotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            val channel = NotificationChannel("1",
+                "channel_1",
+                NotificationManager.IMPORTANCE_DEFAULT)
+            channel.description = "this_is_channel_1"
+            mNotificationManager.createNotificationChannel(channel)
+        }
+        val mBuilder = NotificationCompat.Builder(applicationContext, "1")
+            .setSmallIcon(R.drawable.logo_my_money) // notification icon
+            .setContentTitle(title) // title for notification
+            .setContentText(message)// message for notification
+            .setAutoCancel(true) // clear notification after click
+        val intent = Intent(applicationContext, activity_home_screen::class.java)
+        val pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        mBuilder.setContentIntent(pi)
+        mNotificationManager.notify(0, mBuilder.build())
     }
 }

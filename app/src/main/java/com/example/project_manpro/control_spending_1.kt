@@ -31,7 +31,6 @@ class control_spending_1 : Fragment() {
     lateinit var _btnCancel:AppCompatButton
     lateinit var _btnConfirm:AppCompatButton
     lateinit var _newLimit: EditText
-    lateinit var _newReminder: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +46,6 @@ class control_spending_1 : Fragment() {
         db = FirebaseFirestore.getInstance()
 
         _newLimit = view.findViewById(R.id.edNewLimit)
-        _newReminder = view.findViewById(R.id.edReminder)
 
         val fragmentMainControl = controlspending_utama()
         val fragmentM = parentFragmentManager
@@ -66,10 +64,6 @@ class control_spending_1 : Fragment() {
             if(_newLimit.text.toString() != ""){
                 val addLimit = climit(_newLimit.text.toString())
                 db.collection("limit").document(fAuth.currentUser!!.uid).set(addLimit)
-            }
-            if(_newReminder.text.toString() != ""){
-                val addReminder = creminder(_newReminder.text.toString())
-                db.collection("reminder").document(fAuth.currentUser!!.uid).set(addReminder)
             }
             fragmentM.beginTransaction().apply {
                 replace(R.id.fragmentContainer, fragmentMainControl, controlspending_utama::class.java.simpleName)

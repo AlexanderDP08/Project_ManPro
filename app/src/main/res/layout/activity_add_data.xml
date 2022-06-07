@@ -111,6 +111,7 @@
                 android:background="@drawable/frame_add_data"
                 android:elevation="4dp"
                 android:hint="Amount"
+                android:inputType="number"
                 android:textColor="@color/black"
                 android:textColorHint="@android:color/darker_gray"
                 android:textSize="24sp"

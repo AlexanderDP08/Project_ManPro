@@ -1,5 +1,6 @@
 package com.example.project_manpro
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -8,10 +9,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.text.SimpleDateFormat
+import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,6 +36,21 @@ class controlspending_utama : Fragment() {
     lateinit var _btnEdit : AppCompatButton
     lateinit var _btnReminder : AppCompatButton
 
+    var limit : Double = 0.0
+    var spending : Double = 0.0
+    var reminder : Double = 0.0
+    var expend : Int = 0
+
+    lateinit var _tv1 : TextView
+    lateinit var _tv2 : ImageView
+    lateinit var _tv3: ImageView
+    lateinit var _tv4 : ImageView
+
+    lateinit var myLimit : TextView
+    lateinit var myReminder : TextView
+
+    private lateinit var progressDialog : ProgressDialog
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +69,79 @@ class controlspending_utama : Fragment() {
         fAuth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
 
+        progressDialog = ProgressDialog(activity)
+        progressDialog.setTitle("Please wait")
+        progressDialog.setMessage("Loading Data...")
+        progressDialog.setCanceledOnTouchOutside(false)
+
+        _tv1 = view.findViewById(R.id.tvSpending1)
+        _tv2 = view.findViewById(R.id.tvSpending2)
+        _tv3 = view.findViewById(R.id.tvSpending3)
+        _tv4 = view.findViewById(R.id.tvSpending4)
+
+        db.collection("UserData").document("TransactionData").collection(fAuth.currentUser!!.uid)
+            .get()
+            .addOnSuccessListener {
+                for (document in it) {
+                    val cat = document.data.get("kategori").toString()
+                    val tgl = document.data.get("tanggal").toString()
+                    val bulan = tgl.subSequence(5, 7)
+                    Log.e("bln: ", bulan.toString())
+                    val sdf = SimpleDateFormat("yyyy/MM/dd")
+                    val currentDate = sdf.format(Date()).toString()
+                    val curDateMonth = currentDate.subSequence(5, 7)
+                    Log.e("curmonth: ", curDateMonth.toString())
+                    if(bulan == curDateMonth){
+                        if (cat != "Account Receivable" &&
+                            cat != "Additional Income" &&
+                            cat != "Bonus" &&
+                            cat != "Allowance" &&
+                            cat != "Capital Gain" &&
+                            cat != "Income" &&
+                            cat != "Refund" &&
+                            cat != "Salary" &&
+                            cat != "Savings" &&
+                            cat != "Business Profit"
+                        ) {
+                            expend += document.data.get("jumlah").toString().toInt()
+                        }
+                    }
+                }
+                myReminder.text = expend.toString()
+            }
+            .addOnFailureListener {
+
+            }
+
+        progressDialog.show()
+        db.collection("limit").document(fAuth.currentUser!!.uid).get()
+            .addOnSuccessListener { doc ->
+                limit = doc.data!!["limit"].toString().toDouble()
+                myLimit.text = limit.toString()
+                db.collection("reminder").document(fAuth.currentUser!!.uid).get()
+                    .addOnSuccessListener { doc ->
+                        progressDialog.dismiss()
+                        spending = myReminder.text.toString().toDouble()
+                        myReminder.text = spending.toString()
+
+                        var persen = (spending/limit)*100
+                        _tv1.text = "$persen%"
+
+                        setSpendingBackground(persen)
+
+                        Log.e("Hasil Persen: ", persen.toString())
+                        Log.e("Hasil Limit: ", limit.toString())
+                        Log.e("Hasil Spending: ", spending.toString())
+                    }
+                    .addOnFailureListener {
+                        print(it)
+                    }
+
+            }
+            .addOnFailureListener {
+                print(it)
+            }
+
         db.collection("limit").document(fAuth.currentUser!!.uid).get()
             .addOnSuccessListener { doc ->
                 myLimit.text = doc.data!!["limit"].toString()
@@ -60,7 +152,7 @@ class controlspending_utama : Fragment() {
 
         db.collection("reminder").document(fAuth.currentUser!!.uid).get()
             .addOnSuccessListener { doc ->
-                myReminder.text = doc.data!!["reminder"].toString()
+                reminder = doc.data!!["reminder"].toString().toDouble()
             }
             .addOnFailureListener {
                 print(it)
@@ -87,6 +179,21 @@ class controlspending_utama : Fragment() {
                 addToBackStack(null)
                 commit()
             }
+        }
+    }
+
+    private fun setSpendingBackground(persen : Double) {
+        if(persen >= reminder){
+            _tv1.setBackgroundResource(R.drawable.frame_button_tambah)
+            _tv2.setBackgroundResource(R.drawable.frame_button_tambah)
+            _tv3.setBackgroundResource(R.drawable.frame_button_tambah)
+            _tv4.setBackgroundResource(R.drawable.frame_button_tambah)
+        }
+        else{
+            _tv1.setBackgroundResource(R.drawable.frame_your_spending)
+            _tv2.setBackgroundResource(R.drawable.frame_your_spending)
+            _tv3.setBackgroundResource(R.drawable.frame_your_spending)
+            _tv4.setBackgroundResource(R.drawable.frame_your_spending)
         }
     }
 

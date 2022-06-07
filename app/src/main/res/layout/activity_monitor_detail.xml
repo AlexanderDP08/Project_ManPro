@@ -135,8 +135,7 @@
                 android:layout_width="261dp"
                 android:layout_height="48dp"
                 android:entries="@array/category"
-                android:outlineSpotShadowColor="@color/grey"
-                tools:outlineSpotShadowColor="@color/grey" />
+                android:outlineSpotShadowColor="@color/grey" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView

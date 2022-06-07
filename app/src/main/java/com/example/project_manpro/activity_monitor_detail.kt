@@ -52,10 +52,15 @@ class activity_monitor_detail : AppCompatActivity() {
 
         //Category Spinner
         _spEditCategory = findViewById(R.id.spEditCategory)
-        val AdapterSPCategory = ArrayAdapter.createFromResource(this,
-            R.array.category, R.layout.spinner_item)
+        val AdapterSPCategory = ArrayAdapter.createFromResource(this, R.array.category, R.layout.spinner_item)
         AdapterSPCategory.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         _spEditCategory.adapter = AdapterSPCategory
+
+//        _spEditCategory = findViewById(R.id.spEditCategory)
+//        val AdapterSPCategory = ArrayAdapter.createFromResource(this,
+//            R.array.category, R.layout.spinner_item)
+//        AdapterSPCategory.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+//        _spEditCategory.adapter = AdapterSPCategory
 
         //getDate
         _tvEditDate = findViewById(R.id.tvEditDate)
@@ -73,7 +78,7 @@ class activity_monitor_detail : AppCompatActivity() {
             val adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.category,
-                android.R.layout.simple_spinner_item
+                R.layout.spinner_item
             )
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             _spEditCategory.setAdapter(adapter)

@@ -12,6 +12,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getColor
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
@@ -45,12 +47,10 @@ class controlspending_utama : Fragment() {
     lateinit var _tv2 : ImageView
     lateinit var _tv3: ImageView
     lateinit var _tv4 : ImageView
-
-    lateinit var myLimit : TextView
-    lateinit var myReminder : TextView
+    lateinit var _tvSpendingLimit: TextView
 
     private lateinit var progressDialog : ProgressDialog
-
+    lateinit var _imBear : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,8 +58,6 @@ class controlspending_utama : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -78,6 +76,8 @@ class controlspending_utama : Fragment() {
         _tv2 = view.findViewById(R.id.tvSpending2)
         _tv3 = view.findViewById(R.id.tvSpending3)
         _tv4 = view.findViewById(R.id.tvSpending4)
+        _imBear = view.findViewById(R.id.imBear)
+        _tvSpendingLimit = view.findViewById(R.id.tvSpendingLimit)
 
         db.collection("UserData").document("TransactionData").collection(fAuth.currentUser!!.uid)
             .get()
@@ -121,10 +121,11 @@ class controlspending_utama : Fragment() {
                 db.collection("reminder").document(fAuth.currentUser!!.uid).get()
                     .addOnSuccessListener { doc ->
                         progressDialog.dismiss()
-                        spending = myReminder.text.toString().toDouble()
-                        myReminder.text = spending.toString()
+                        spending = doc.data!!["reminder"].toString().toDouble()
+                        _tvSpendingLimit.setText("Your Spending Limit: $spending%")
+                        //myReminder.text = spending.toString()
 
-                        var persen = (spending/limit)*100
+                        var persen = (expend/limit)*100
                         _tv1.text = "$persen%"
 
                         setSpendingBackground(persen)
@@ -185,12 +186,15 @@ class controlspending_utama : Fragment() {
 
     private fun setSpendingBackground(persen : Double) {
         if(persen >= reminder){
+            _tv1.setTextColor(getColor(requireContext(), R.color.white))
+            _imBear.setBackgroundResource(R.drawable.bear_shock)
             _tv1.setBackgroundResource(R.drawable.frame_button_tambah)
             _tv2.setBackgroundResource(R.drawable.frame_button_tambah)
             _tv3.setBackgroundResource(R.drawable.frame_button_tambah)
             _tv4.setBackgroundResource(R.drawable.frame_button_tambah)
         }
         else{
+            _imBear.setBackgroundResource(R.drawable.bear_jempol)
             _tv1.setBackgroundResource(R.drawable.frame_your_spending)
             _tv2.setBackgroundResource(R.drawable.frame_your_spending)
             _tv3.setBackgroundResource(R.drawable.frame_your_spending)

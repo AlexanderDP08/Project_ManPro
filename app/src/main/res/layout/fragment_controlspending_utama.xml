@@ -108,15 +108,6 @@
             app:layout_constraintTop_toBottomOf="@+id/btnEdit" />
 
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="150dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bear_jempol"
-            app:layout_constraintBottom_toBottomOf="@+id/tvSpending1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvSpending1" />
-
-        <ImageView
             android:id="@+id/tvSpending4"
             android:layout_width="32dp"
             android:layout_height="32dp"
@@ -154,7 +145,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvSpending1" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/tvSpendingLimit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -177,7 +168,15 @@
             android:textSize="28sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+            app:layout_constraintTop_toBottomOf="@+id/tvSpendingLimit" />
+
+        <TextView
+            android:id="@+id/imBear"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSpending1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvSpending1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

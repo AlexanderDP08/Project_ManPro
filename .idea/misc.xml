@@ -4,17 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/drawable/frame_monthly_expenses.xml" value="0.3675" />
-        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/activity_account.xml" value="0.5" />
+        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/activity_account.xml" value="0.254981884057971" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/activity_add_baru.xml" value="0.33" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/activity_add_data.xml" value="0.32063492063492066" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/activity_control_spending.xml" value="0.22871376811594202" />
-        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/activity_edit_account.xml" value="0.33" />
+        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/activity_edit_account.xml" value="0.22871376811594202" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/activity_forgot_password.xml" value="0.22871376811594202" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/activity_home_screen.xml" value="0.43460350154479915" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/activity_logo_loading.xml" value="0.22871376811594202" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/activity_main.xml" value="0.22871376811594202" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/activity_monitor.xml" value="0.33" />
-        <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/activity_monitor_detail.xml" value="0.1762917933130699" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/activity_reset_password.xml" value="0.22871376811594202" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/activity_sign_in.xml" value="0.22871376811594202" />
         <entry key="..\:/Tugas Kuliah/2021-2022 Semester Genap/ManPro/Project My Money/Project_ManPro/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
@@ -82,7 +81,9 @@
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_account.xml" value="0.26721014492753625" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_add_data.xml" value="0.18819655521783182" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_home_screen.xml" value="0.25" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_main.xml" value="0.18819655521783182" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_monitor.xml" value="0.18819655521783182" />
+        <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/activity_monitor_detail.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/fragment_control_spending_1.xml" value="0.25" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/fragment_controlspending_utama.xml" value="0.25" />
         <entry key="..\:/Users/dingf/AndroidStudioProjects/Project_ManPro/app/src/main/res/layout/fragment_finance_balance.xml" value="0.18819655521783182" />

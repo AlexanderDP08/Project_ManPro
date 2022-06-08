@@ -1,7 +1,9 @@
 package com.example.project_manpro
 
 import android.app.ProgressDialog
+import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +14,8 @@ import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.text.SimpleDateFormat
+import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,9 +34,12 @@ class controlspending_utama : Fragment() {
     private lateinit var fAuth : FirebaseAuth
     private lateinit var db : FirebaseFirestore
     lateinit var _btnEdit : AppCompatButton
+    lateinit var _btnReminder : AppCompatButton
 
     var limit : Double = 0.0
     var spending : Double = 0.0
+    var reminder : Double = 0.0
+    var expend : Int = 0
 
     lateinit var _tv1 : TextView
     lateinit var _tv2 : ImageView
@@ -57,8 +64,8 @@ class controlspending_utama : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        myLimit = view.findViewById(R.id.textView13)
-        myReminder = view.findViewById(R.id.textView11)
+        val myLimit = view.findViewById<TextView>(R.id.textView13)
+        val myReminder = view.findViewById<TextView>(R.id.textView11)
         fAuth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
 
@@ -72,6 +79,40 @@ class controlspending_utama : Fragment() {
         _tv3 = view.findViewById(R.id.tvSpending3)
         _tv4 = view.findViewById(R.id.tvSpending4)
 
+        db.collection("UserData").document("TransactionData").collection(fAuth.currentUser!!.uid)
+            .get()
+            .addOnSuccessListener {
+                for (document in it) {
+                    val cat = document.data.get("kategori").toString()
+                    val tgl = document.data.get("tanggal").toString()
+                    val bulan = tgl.subSequence(5, 7)
+                    Log.e("bln: ", bulan.toString())
+                    val sdf = SimpleDateFormat("yyyy/MM/dd")
+                    val currentDate = sdf.format(Date()).toString()
+                    val curDateMonth = currentDate.subSequence(5, 7)
+                    Log.e("curmonth: ", curDateMonth.toString())
+                    if(bulan == curDateMonth){
+                        if (cat != "Account Receivable" &&
+                            cat != "Additional Income" &&
+                            cat != "Bonus" &&
+                            cat != "Allowance" &&
+                            cat != "Capital Gain" &&
+                            cat != "Income" &&
+                            cat != "Refund" &&
+                            cat != "Salary" &&
+                            cat != "Savings" &&
+                            cat != "Business Profit"
+                        ) {
+                            expend += document.data.get("jumlah").toString().toInt()
+                        }
+                    }
+                }
+                myReminder.text = expend.toString()
+            }
+            .addOnFailureListener {
+
+            }
+
         progressDialog.show()
         db.collection("limit").document(fAuth.currentUser!!.uid).get()
             .addOnSuccessListener { doc ->
@@ -80,7 +121,7 @@ class controlspending_utama : Fragment() {
                 db.collection("reminder").document(fAuth.currentUser!!.uid).get()
                     .addOnSuccessListener { doc ->
                         progressDialog.dismiss()
-                        spending = doc.data!!["reminder"].toString().toDouble()
+                        spending = myReminder.text.toString().toDouble()
                         myReminder.text = spending.toString()
 
                         var persen = (spending/limit)*100
@@ -101,12 +142,41 @@ class controlspending_utama : Fragment() {
                 print(it)
             }
 
-        _btnEdit = view.findViewById(R.id.btnEdit)
+        _btnEdit=view.findViewById(R.id.btnEdit)
+        db.collection("limit").document(fAuth.currentUser!!.uid).get()
+            .addOnSuccessListener { doc ->
+                myLimit.text = doc.data!!["limit"].toString()
+            }
+            .addOnFailureListener {
+                print(it)
+            }
+
+        db.collection("reminder").document(fAuth.currentUser!!.uid).get()
+            .addOnSuccessListener { doc ->
+                reminder = doc.data!!["reminder"].toString().toDouble()
+            }
+            .addOnFailureListener {
+                print(it)
+            }
+
+        _btnEdit=view.findViewById(R.id.btnEdit)
+        _btnReminder=view.findViewById(R.id.btnEditReminder)
         _btnEdit.setOnClickListener {
             val fragmentEdit = control_spending_1()
             val fragmentM = parentFragmentManager
+            Log.e(tag, myLimit.text.toString())
             fragmentM.beginTransaction().apply {
                 replace(R.id.fragmentContainer, fragmentEdit, control_spending_1::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+        _btnReminder.setOnClickListener {
+            val fragmentEdit = fragment_control_spending_2()
+            val fragmentM = parentFragmentManager
+            Log.e(tag, myLimit.text.toString())
+            fragmentM.beginTransaction().apply {
+                replace(R.id.fragmentContainer, fragmentEdit, fragment_control_spending_2::class.java.simpleName)
                 addToBackStack(null)
                 commit()
             }
@@ -114,7 +184,7 @@ class controlspending_utama : Fragment() {
     }
 
     private fun setSpendingBackground(persen : Double) {
-        if(persen >= 100.0){
+        if(persen >= reminder){
             _tv1.setBackgroundResource(R.drawable.frame_button_tambah)
             _tv2.setBackgroundResource(R.drawable.frame_button_tambah)
             _tv3.setBackgroundResource(R.drawable.frame_button_tambah)

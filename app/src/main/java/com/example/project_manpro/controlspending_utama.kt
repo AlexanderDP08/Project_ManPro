@@ -101,7 +101,7 @@ class controlspending_utama : Fragment() {
                 print(it)
             }
 
-        _btnEdit=view.findViewById(R.id.btnEdit)
+        _btnEdit = view.findViewById(R.id.btnEdit)
         _btnEdit.setOnClickListener {
             val fragmentEdit = control_spending_1()
             val fragmentM = parentFragmentManager

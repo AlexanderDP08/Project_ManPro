@@ -111,15 +111,14 @@ class activity_monitor_detail : AppCompatActivity() {
 
         _btnEditConfirm.setOnClickListener {
             //add data to database here
-            addtoDatabase(
-                db,
-                _etEditTransaction.text.toString(),
-                _tvEditDate.text.toString(),
-                _etEditAmount.text.toString(),
-                getCategory(_spEditCategory)
-            )
-            startActivity(Intent(this, activity_home_screen::class.java))
-            finish()
+            if(_etEditTransaction.text.toString() != "" && _tvEditDate.text.toString() != "" && _etEditAmount.text.toString() != ""){
+                addtoDatabase(db, _etEditTransaction.text.toString(), _tvEditDate.text.toString(), _etEditAmount.text.toString(), getCategory(_spEditCategory))
+                //checkLimit()
+                startActivity(Intent(this, activity_home_screen::class.java))
+                finish()
+            }else{
+                Toast.makeText(this,"Input data belum lengkap",Toast.LENGTH_SHORT).show()
+            }
         }
         _btnEditCancel.setOnClickListener {
             onBackPressed()

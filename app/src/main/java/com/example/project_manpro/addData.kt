@@ -99,10 +99,15 @@ class addData : AppCompatActivity() {
             onBackPressed()
         }
         _btnConfirm.setOnClickListener {
-           addtoDatabase(db, _etTransaction.text.toString(), _tvDate.text.toString(), _etAmount.text.toString(), getCategory(categorySpinner))
-            //checkLimit()
-           startActivity(Intent(this, activity_home_screen::class.java))
-            finish()
+            if(_etTransaction.text.toString() != "" && _tvDate.text.toString() != "" && _etAmount.text.toString() != ""){
+                addtoDatabase(db, _etTransaction.text.toString(), _tvDate.text.toString(), _etAmount.text.toString(), getCategory(categorySpinner))
+                //checkLimit()
+                startActivity(Intent(this, activity_home_screen::class.java))
+                finish()
+            }else{
+                Toast.makeText(this,"Input data belum lengkap",Toast.LENGTH_SHORT).show()
+            }
+
         }
     }
 

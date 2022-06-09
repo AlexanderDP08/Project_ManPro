@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.SpinnerAdapter
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -61,14 +62,16 @@ class fragment_control_spending_2 : Fragment() {
         }
 
         _btnConfirm.setOnClickListener {
-            if(_newReminder.text.toString() != ""){
+            if(_newReminder.text.toString() != "" && _newReminder.text.toString().toInt() >= 10 && _newReminder.text.toString().toInt() <= 90){
                 val addReminder = creminder(_newReminder.text.toString())
                 db.collection("reminder").document(fAuth.currentUser!!.uid).set(addReminder)
-            }
-            fragmentM.beginTransaction().apply {
-                replace(R.id.fragmentContainer, fragmentMainControl, controlspending_utama::class.java.simpleName)
-                addToBackStack(null)
-                commit()
+                fragmentM.beginTransaction().apply {
+                    replace(R.id.fragmentContainer, fragmentMainControl, controlspending_utama::class.java.simpleName)
+                    addToBackStack(null)
+                    commit()
+                }
+            }else{
+                Toast.makeText(activity,"Input data hanya bisa range 10-90",Toast.LENGTH_SHORT).show()
             }
         }
 

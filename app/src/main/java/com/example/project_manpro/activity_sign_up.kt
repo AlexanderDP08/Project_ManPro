@@ -73,8 +73,8 @@ class activity_sign_up : AppCompatActivity() {
 
                 //Add Username to Username Database with Firebase Firestore
                 var addData = uid(_edName.text.toString().trim())
-                var addLimit = climit("-")
-                var addReminder = creminder("-")
+                var addLimit = climit("0")
+                var addReminder = creminder("50")
                 db = FirebaseFirestore.getInstance()
 
 //                val docID = genDocID()

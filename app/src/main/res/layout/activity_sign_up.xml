@@ -90,7 +90,8 @@
                     android:background="@drawable/rounded_edittext"
                     android:paddingLeft="20dp"
                     android:textColor="@color/black"
-                    android:hint="Password" />
+                    android:hint="Password"
+                    />
 
             </com.google.android.material.textfield.TextInputLayout>
 

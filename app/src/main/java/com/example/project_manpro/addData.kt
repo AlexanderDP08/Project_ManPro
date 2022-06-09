@@ -107,12 +107,7 @@ class addData : AppCompatActivity() {
             }else{
                 Toast.makeText(this,"Input data belum lengkap",Toast.LENGTH_SHORT).show()
             }
-
         }
-    }
-
-    private fun checkLimit() {
-        showNotification("Control Spending 50%","You have used 50% of your current spending limit.")
     }
 
     private fun addtoDatabase(db: FirebaseFirestore, judul: String, tanggal: String, jumlah: String, kategory: String) {
@@ -156,25 +151,5 @@ class addData : AppCompatActivity() {
         }
 
         return id.toString()
-    }
-
-    fun showNotification(title: String, message: String) {
-        val mNotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            val channel = NotificationChannel("1",
-                "channel_1",
-                NotificationManager.IMPORTANCE_DEFAULT)
-            channel.description = "this_is_channel_1"
-            mNotificationManager.createNotificationChannel(channel)
-        }
-        val mBuilder = NotificationCompat.Builder(applicationContext, "1")
-            .setSmallIcon(R.drawable.logo_my_money) // notification icon
-            .setContentTitle(title) // title for notification
-            .setContentText(message)// message for notification
-            .setAutoCancel(true) // clear notification after click
-        val intent = Intent(applicationContext, activity_home_screen::class.java)
-        val pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
-        mBuilder.setContentIntent(pi)
-        mNotificationManager.notify(0, mBuilder.build())
     }
 }

@@ -126,7 +126,8 @@ class controlspending_utama : Fragment() {
                         //myReminder.text = spending.toString()
 
                         var persen = (expend/limit)*100
-                        _tv1.text = "$persen%"
+                        String.format("%.1f", persen).toDouble()
+                        _tv1.text = String.format("%.1f", persen).toDouble().toString() + "%"
 
                         setSpendingBackground(persen)
 

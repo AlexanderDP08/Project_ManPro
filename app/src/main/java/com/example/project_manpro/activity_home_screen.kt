@@ -9,6 +9,7 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.View
 import android.widget.ImageButton
@@ -19,6 +20,8 @@ import androidx.core.app.NotificationCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class activity_home_screen : AppCompatActivity() {
@@ -39,9 +42,21 @@ class activity_home_screen : AppCompatActivity() {
 
     private lateinit var progressDialog : ProgressDialog
 
+    var handler: Handler = Handler()
+    var runnable: Runnable? = null
+    var delay = 1000
+
+    //time
+    var currentSec = 0
+    var counter = false
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_screen)
+
+        currentSec = getCurrentSec().toInt()
+        currentSec = (60 - currentSec) - 2
 
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Please wait")
@@ -115,7 +130,33 @@ class activity_home_screen : AppCompatActivity() {
         checkNotif()
     }
 
-    fun checkNotif(){
+    override fun onResume() {
+        handler.postDelayed(Runnable {
+            handler.postDelayed(runnable!!, delay.toLong())
+            time()
+            //Toast.makeText(this@PlayScreen, "This method will run every 10 seconds", Toast.LENGTH_SHORT).show()
+        }.also { runnable = it }, delay.toLong())
+        super.onResume()
+    }
+
+    fun getCurrentSec(): String {
+        val now = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern("ss")
+        val time = now.format(formatter)
+        return time
+    }
+
+    private fun time(){
+        if (currentSec > 0){
+            currentSec -= 1
+            if(currentSec == 0){
+                checkNotif()
+                currentSec = 5
+            }
+        }
+    }
+
+    private fun checkNotif(){
         var limit = 0.0
         var reminder : Double = 0.0
         var persen : Double = 0.0
@@ -127,7 +168,7 @@ class activity_home_screen : AppCompatActivity() {
                     .addOnSuccessListener { doc ->
                         progressDialog.dismiss()
                         reminder = doc.data!!["reminder"].toString().toDouble()
-                        persen = (expend/limit)
+                        persen = (expend/limit) * 100
 
                         limitformated = "Rp. " + "%,d".format(limit.toInt())
 
@@ -136,13 +177,19 @@ class activity_home_screen : AppCompatActivity() {
                         Log.e("Hasil Expend: ", expend.toString())
                         Log.e("Hasil Limit: ", limit.toString())
                         Log.e("Hasil Reminder: ", reminder.toString())
+                        if(reminder.toInt() <= persen.toInt()){
+                                Log.e("IF Reminder: ", reminder.toString())
+                                Log.e("IF Persen: ", persen.toString())
+                            showNotification("Control Spending Reminder!",
+                                "You have used ${String.format("%.1f", persen).toDouble().toString()}% of your current spending limit of ${limitformated.toString()}"
+                            )
+                        }
+                        else {
+
+                        }
                     }
             }
-        if(reminder <= persen){
-            showNotification("Control Spending Reminder!",
-                "You have used $persen% of your current spending limit of $limitformated"
-            )
-        }
+
     }
 
     fun getCurrentExpend() {
@@ -193,6 +240,8 @@ class activity_home_screen : AppCompatActivity() {
             .setSmallIcon(R.drawable.logo_my_money) // notification icon
             .setContentTitle(title) // title for notification
             .setContentText(message)// message for notification
+            .setStyle(NotificationCompat.BigTextStyle()
+                .bigText(message))
             .setAutoCancel(true) // clear notification after click
         val intent = Intent(applicationContext, activity_home_screen::class.java)
         val pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)

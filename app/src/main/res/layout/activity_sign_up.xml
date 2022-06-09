@@ -71,20 +71,28 @@
                 app:layout_constraintStart_toStartOf="@+id/etSignUpName"
                 app:layout_constraintTop_toBottomOf="@+id/etSignUpName" />
 
-            <EditText
-                android:id="@+id/etSignUpPassword"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilSignUpPassword"
                 android:layout_width="240dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/rounded_edittext"
-                android:ems="10"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:paddingLeft="20sp"
+                android:layout_height="55dp"
+                android:layout_marginTop="5dp"
+                app:passwordToggleTint="@color/black"
                 android:textColorHint="@color/black"
-                android:textColor="@color/black"
+                app:passwordToggleEnabled="true"
                 app:layout_constraintStart_toStartOf="@+id/etSignUpEmail"
-                app:layout_constraintTop_toBottomOf="@+id/etSignUpEmail" />
+                app:layout_constraintTop_toBottomOf="@+id/etSignUpEmail">
+
+                <EditText
+                    android:id="@+id/etSignUpPassword"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:background="@drawable/rounded_edittext"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/black"
+                    android:hint="Password" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSignUpRegister"
@@ -94,19 +102,8 @@
                 android:background="@drawable/rounded_btnedittext"
                 android:text="Register"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/etSignUpPassword" />
+                app:layout_constraintStart_toStartOf="@+id/tilSignUpPassword" />
 
-            <ImageButton
-                android:id="@+id/btnPassSignUp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:background="@null"
-                app:srcCompat="@drawable/show_password"
-                app:layout_constraintBottom_toBottomOf="@+id/etSignUpPassword"
-                app:layout_constraintEnd_toEndOf="@+id/etSignUpPassword"
-                app:layout_constraintTop_toTopOf="@+id/etSignUpPassword"
-                app:tint="@color/black" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

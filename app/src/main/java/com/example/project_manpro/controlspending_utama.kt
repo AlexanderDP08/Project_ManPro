@@ -107,7 +107,7 @@ class controlspending_utama : Fragment() {
                         }
                     }
                 }
-                myReminder.text = "Rp. $expend"
+                myReminder.text = "Rp. " + "%,d".format(expend)
             }
             .addOnFailureListener {
 
@@ -117,7 +117,7 @@ class controlspending_utama : Fragment() {
         db.collection("limit").document(fAuth.currentUser!!.uid).get()
             .addOnSuccessListener { doc ->
                 limit = doc.data!!["limit"].toString().toDouble()
-                myLimit.text = "Rp. $limit"
+                myLimit.text = "Rp. " + "%,d".format(limit.toInt())
                 db.collection("reminder").document(fAuth.currentUser!!.uid).get()
                     .addOnSuccessListener { doc ->
                         progressDialog.dismiss()
@@ -146,7 +146,7 @@ class controlspending_utama : Fragment() {
         _btnEdit=view.findViewById(R.id.btnEdit)
         db.collection("limit").document(fAuth.currentUser!!.uid).get()
             .addOnSuccessListener { doc ->
-                myLimit.text = "Rp. ${doc.data!!["limit"].toString()}"
+                "Rp. " + "%,d".format(doc.data!!["limit"].toString().toInt())
             }
             .addOnFailureListener {
                 print(it)
